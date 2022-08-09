@@ -1,0 +1,30 @@
+### Global Variables
+
+    set $mod Mod4
+    set $left h
+    set $down j
+    set $up k
+    set $right l
+
+# applications
+    set $term alacritty
+    set $browser brave
+    set $lock_bg ~/Wallpapers/nord/ign_animeGirlSleeping.png
+
+# app launcher menu
+# set $menu bemenu-run 
+    set $menu tofi-run -c ~/.config/tofi/config | xargs swaymsg exec --
+
+
+
+### Key bindings
+    include ./bindings
+### Custom tools
+    include ./custom
+### Layout settings
+    include ./layout
+### Input settings keyboard etc.
+    include ./input
+
+
+    include /etc/sway/config.d/*

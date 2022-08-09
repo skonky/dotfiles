@@ -1,0 +1,96 @@
+pfetch
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Path to your oh-my-zsh installation.
+export ZSH="/home/frank/.oh-my-zsh"
+export EDITOR='nvim'
+
+# Initialize rupa/z jump around
+. /opt/z.sh
+
+# ZSH_THEME="tywr"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
+plugins=( 
+    git
+    zsh-autosuggestions
+    zsh-completions
+)
+
+source $ZSH/oh-my-zsh.sh
+
+
+export PATH="$PATH:/opt/flutter/bin"
+export PATH="$PATH:$HOME/.pub-cache/bin"
+export PATH="$PATH:$HOME/Android/Sdk"
+
+alias vim='nvim'
+alias v='nvim'
+alias t='tmux'
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias ls='lsd'
+
+alias ahs='ah-start start'
+alias ahsd='ah-start start -m dev-local-graphql'
+alias top10='history 1 | awk "{print $2}" | sort | uniq -c | sort -rn | head -n 10'
+alias pbcopy='xclip -selection clipboard'
+
+alias mk='minikube'
+alias k='kubectl'
+alias ktst='kubectl config use-context ah-tst --namespace=ah'
+alias kacc='kubectl config use-context ah-acc --namespace=ah'
+alias kprd='kubectl config use-context ah-prd --namespace=ah'
+alias klocal='kubectl config use-context minikube'
+alias kgp='kubectl get pods'
+
+alias gir='git'
+alias gs='git status'
+alias gsta='git stash'
+alias gch='git checkout'
+alias gcm='git commit -m'
+alias gipu='git pull'
+alias ga='git add'
+alias gfa='git fetch --all'
+alias gfo='git fetch origin'
+alias gdiff='git diff'
+alias grom='git rebase origin/master'
+alias gfirst='git log --date-order --format=%cI | tail -1'
+alias gcmdl='git checkout master && git branch --merged master | grep -v "master" | xargs -n 1 git branch -d'
+
+alias nrd='npm run dev'
+alias npi='npm install'
+alias npt='npm run test'
+alias nrb='npm run build'
+
+alias yis='cowsay yis; yi && ys'
+alias yrd='yarn run development'
+alias ybs='yarn build && yarn start'
+alias yb='yarn build'
+alias ys='yarn start'
+alias yt='yarn test'
+alias ya='yarn add'
+alias yi='yarn install'
+alias y='yarn'
+
+alias vpad='vim ~/vimpad.txt'
+alias yacl='yalc' 
+alias c='clear'
+
+alias bitcoin='sh ~/scripts/bitcoin.sh'
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# bun completions
+[ -s "/home/$USER/.bun/_bun" ] && source "/$HOME/.bun/_bun"
+
+# bun
+export BUN_INSTALL="/$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
