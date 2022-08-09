@@ -7,7 +7,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/frank/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 export EDITOR='nvim'
 
 # Initialize rupa/z jump around
@@ -88,7 +88,7 @@ alias bitcoin='sh ~/scripts/bitcoin.sh'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # bun completions
-[ -s "/home/$USER/.bun/_bun" ] && source "/$HOME/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "/$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="/$HOME/.bun"
