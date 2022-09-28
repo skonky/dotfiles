@@ -26,5 +26,4 @@
 ### Input settings keyboard etc.
     include ./input
 
-
     include /etc/sway/config.d/*

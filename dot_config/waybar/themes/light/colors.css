@@ -1,0 +1,43 @@
+/* HUES AND SHADES */
+
+/* BLACK */
+@define-color black #212121;
+@define-color black-500 @black;
+@define-color black-400 #424242;
+@define-color black-800 #f4f4f4;
+@define-color black-900 #ffffff;
+
+/* PURPLE */
+@define-color purple #8839ef;
+@define-color purple-500 @purple;
+
+/* RED */
+@define-color red #EF476F;
+@define-color red-500 @red;
+
+/* GREEN */
+@define-color green #06D6A0;
+@define-color green-500 @green;
+
+/* BLUE */
+@define-color blue #118AB2;
+@define-color blue-500 @blue;
+
+/* YELLOW */
+@define-color yellow #FFD166;
+@define-color yellow-500 @yellow;
+
+/* ORANGE */
+
+/* DESIGN TOKENS */
+
+/* BAR */
+@define-color bar-bg @black-500;
+
+/* WORKSPACES */
+@define-color primary-text-color @black-900;
+@define-color primary-text-color-black @black-500;
+@define-color workspace-focused @purple-500;
+@define-color workspace-inactive-hover @black-400;
+@define-color urgent @red-500;
+@define-color positive @green-500;

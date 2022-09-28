@@ -1,0 +1,4 @@
+{
+    "include": ["$HOME/.config/waybar/configs/minimal.jsonc"]
+}
+

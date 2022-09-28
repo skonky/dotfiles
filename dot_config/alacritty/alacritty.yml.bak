@@ -1,0 +1,62 @@
+# Window configuration
+draw_bold_text_with_bright_colors: true
+env:
+  TERM: xterm-256color
+
+# 292B2E
+colors:
+  primary:
+    background: "#292B2E"
+#     foreground: "0xD9E0EE"
+
+#   # Colors the cursor will use if `custom_cursor_colors` is true
+#   cursor:
+#     text: "0x1E1D2F"
+#     cursor: "0xF5E0DC"
+
+#   # Normal colors
+#   normal:
+#     black: "0x6E6C7E"
+#     red: "0xF28FAD"
+#     green: "0xABE9B3"
+#     yellow: "0xFAE3B0"
+#     blue: "0x96CDFB"
+#     magenta: "0xF5C2E7"
+#     cyan: "0x89DCEB"
+#     white: "0xD9E0EE"
+
+#   # Bright colors
+#   bright:
+#     black: "0x988BA2"
+#     red: "0xF28FAD"
+#     green: "0xABE9B3"
+#     yellow: "0xFAE3B0"
+#     blue: "0x96CDFB"
+#     magenta: "0xF5C2E7"
+#     cyan: "0x89DCEB"
+#     white: "0xD9E0EE"
+
+window:
+  dynamic_padding: false
+  padding:
+    y: 7 # THIS EXACT LINE NUMBER IS USED IN nvim/init.lua DONT MOVE IT
+    x: 7 # THIS EXACT LINE NUMBER IS USED IN nvim/init.lua DONT MOVE IT
+
+# Font configuration
+font:
+  size: 13
+  normal:
+    family: JetBrains Mono Nerd Font
+    style: Bold
+
+  medium:
+    family: JetBrains Mono Nerd Font
+    style: Bold
+
+  bold:
+    family: JetBrains Mono Nerd Font
+    style: Bold
+
+  italic:
+    family: JetBrains Mono Nerd Font
+    style: Italic

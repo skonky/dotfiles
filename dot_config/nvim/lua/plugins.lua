@@ -13,6 +13,8 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'RishabhRD/popfix'
 Plug 'RishabhRD/nvim-lsputils'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'glepnir/dashboard-nvim'
 
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
@@ -29,8 +31,11 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'kevinoid/vim-jsonc'
--- Plug 'preservim/nerdtree'
+Plug 'williamboman/mason.nvim'
+
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'rktjmp/lush.nvim'
+Plug 'akai54/2077.nvim'
 Plug 'akinsho/flutter-tools.nvim'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'natebosch/vim-lsc'
@@ -44,36 +49,27 @@ Plug 'romgrk/barbar.nvim'
 Plug 'elmcast/elm-vim'
 Plug 'ptzz/lf.vim'
 Plug 'voldikss/vim-floaterm'
+Plug 'lewis6991/gitsigns.nvim'
 
 -- colorschemes
+Plug 'liuchengxu/space-vim-dark'
+Plug 'tomasiser/vim-code-dark'
 Plug('catppuccin/nvim', {['as'] = 'catpuccin'})
 Plug('sonph/onehalf', {['rtp'] = 'vim/'})
 Plug('lourenci/github-colors', { ['branch'] = 'main' })
 Plug('folke/tokyonight.nvim', { ['branch'] = 'main' })
 Plug('embark-theme/vim', { ['as'] = 'embark', ['branch'] = 'main' })
-Plug('prettier/vim-prettier', { ['do'] = 'yarn install --frozen-lockfile --production' })
+Plug('shaunsingh/oxocarbon.nvim', { ['do']= './install.sh' })
+Plug('EdenEast/nightfox.nvim')
+
+-- Plug('prettier/vim-prettier', { ['do'] = 'yarn install --frozen-lockfile --production' })
 
 Plug 'joshdick/onedark.vim'
 Plug 'sainnhe/everforest'
 Plug 'dracula/vim'
 Plug 'ellisonleao/gruvbox.nvim'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'vimpostor/vim-prism'
-Plug 'mvpopuk/inspired-github.vim'
-Plug 'scolsen/hara'
-Plug 'cideM/yui'
-Plug 'pgdouyon/vim-yin-yang'
-Plug 'shaeinst/roshnivim-cs' -- rvcs
-Plug 'rafamadriz/neon'
-Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'bluz71/vim-moonfly-colors'
-Plug 'rockerBOO/boo-colorscheme-nvim'
 Plug 'patstockwell/vim-monokai-tasty'
-Plug 'phanviet/vim-monokai-pro'
-Plug 'n1ghtmare/noirblaze-vim'
-Plug 'andreasvc/vim-256noir'
-Plug 'nikolvs/vim-sunbather'
-Plug 'ericbn/vim-solarized'
 
 
 vim.call('plug#end')

@@ -32,6 +32,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
+
 bindsym $mod+$right focus right
 # Or use $mod+[up|down|left|right]
 bindsym $mod+Left focus left

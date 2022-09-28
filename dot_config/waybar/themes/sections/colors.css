@@ -1,0 +1,75 @@
+/* HUES AND SHADES */
+
+/* BLACK */
+@define-color black #1E1E28;
+@define-color black-500 @black;
+@define-color black-400 #2D293B;
+@define-color black-900 #ffffff;
+
+/* PURPLE */
+/* @define-color purple #8839ef; */
+/* @define-color purple-500 @purple; */
+
+/* RED */
+@define-color red #e28c8c;
+@define-color red-500 @red;
+
+/* GREEN */
+@define-color green #a6da95;
+@define-color green-500 @green;
+
+/* BLUE */
+@define-color blue #8aadf4;
+@define-color blue-500 @blue;
+
+/* YELLOW */
+@define-color yellow #f4dbd6;
+@define-color yellow-500 @yellow;
+
+/* ORANGE */
+
+/* DESIGN TOKENS */
+
+/* BAR */
+@define-color bar-bg @black-500;
+
+/* WORKSPACES */
+@define-color primary-text-color @black-900;
+@define-color primary-text-color-black @black-500;
+@define-color workspace-focused @purple-500;
+@define-color workspace-inactive-hover @black-400;
+@define-color urgent @red-500;
+@define-color positive @green-500;
+
+@define-color amber #ffbe0b;
+@define-color orange-pantone #fb5607;
+@define-color winter-sky #ff4499;
+@define-color blue-violet #8338ec;
+@define-color azure #3a86ff;
+
+/* CSS HEX */
+@define-color smoky-black #1a1b26;
+@define-color winter-sky #ff4499;
+@define-color lemon-glacier #e0af68;
+@define-color turquoise #ff9e64;
+@define-color white #ffffff;
+
+/* @define-color bg1 #73daca; */
+/* @define-color bg1 #7aa2f7; */
+/* @define-color bg1 #b4f9f8; */
+/* @define-color bg1 #2ac3de; */
+/* @define-color bg1 #7dcfff; */
+/* @define-color bg1 #7aa2f7; */
+/* @define-color bg1 #9ece6a; */
+/* @define-color bg1 #e0af68; */
+/* @define-color bg1 #bb9af7; */
+@define-color bg1 #f7768e;
+/* @define-color bg1 #2AC3DE; */
+/* @define-color color1 #a9b1d6; */
+/* @define-color color1 #414868; */
+/* @define-color color1 #b4f9f8; */
+@define-color color1 #fff;
+
+@define-color bg2 #2AC3DE;
+@define-color bg3 #136C7C;
+@define-color bg5 #1C9AB0;

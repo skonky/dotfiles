@@ -1,0 +1,11 @@
+window#waybar {
+  background-color: @smoky-black;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  margin: 10px;
+  padding: 10px;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}

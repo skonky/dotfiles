@@ -13,7 +13,8 @@ function imap(shortcut, command)
 end
 
 -- file navigation
--- nmap("<leader>fe", ":NERDTreeFind<CR>")
+nmap("<leader>n", ":NvimTreeFindFile<CR>")
+nmap("<leader>m", ":NvimTreeClose<CR>")
 map("n", '<leader>fe', ":LfCurrentDirectory<CR>")
 map("n", '<leader>fw', ":LfWorkingDirectory<CR>")
 nmap("<leader>ff", "<cmd>Telescope find_files<cr>")
@@ -22,7 +23,6 @@ nmap("<leader>fb", "<cmd>Telescope buffers<cr>")
 nmap("<leader>fh", "<cmd>Telescope help_tags<cr>")
 nmap("<leader>gs", "<cmd>Telescope git_status<cr>")
 
--- enable limelight (needs opactiy)
 map("n", '<leader>l', ":Limelight!!<CR>")
 
 -- quickly jump between working files

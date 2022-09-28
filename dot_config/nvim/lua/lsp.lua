@@ -39,13 +39,13 @@ lspconfig.tsserver.setup({
         client.resolved_capabilities.document_formatting = false
         client.resolved_capabilities.document_range_formatting = false        
         local ts_utils = require("nvim-lsp-ts-utils")
-        ts_utils.setup({
-            eslint_bin = "eslint_d",
-            eslint_enable_diagnostics = true,
-            eslint_enable_code_actions = true,
-            enable_formatting = true,
-            formatter = "prettier",
-        })
+        -- ts_utils.setup({
+        --     -- eslint_bin = "eslint_d",
+        --     -- eslint_enable_diagnostics = true,
+        --     -- eslint_enable_code_actions = true,
+        --     -- enable_formatting = true,
+        --     -- formatter = "prettier",
+        -- })
         ts_utils.setup_client(client)
         buf_map(bufnr, "n", "gs", ":TSLspOrganize<CR>")
         buf_map(bufnr, "n", "gi", ":TSLspRenameFile<CR>")
@@ -58,9 +58,14 @@ lspconfig.elmls.setup({on_attach = on_attach})
 
 null_ls.setup({ 
   on_attach = on_attach,
-  null_ls.builtins.formatting.prettier,
-  null_ls.builtins.diagnostics.write_good,
-  null_ls.builtins.code_actions.gitsigns,
+  sources ={
+      null_ls.builtins.formatting.prettierd,
+      null_ls.builtins.diagnostics.write_good,
+      null_ls.builtins.code_actions.gitsigns,
+      null_ls.builtins.diagnostics.eslint_d,
+      null_ls.builtins.code_actions.eslint_d,
+      null_ls.builtins.formatting.eslint_d
+  }
 })
 
 lspconfig.gopls.setup({on_attach = on_attach})
@@ -87,13 +92,13 @@ local rust_attach = function(client, bufnr)
     buf_map(bufnr, "n", "[a", ":LspDiagPrev<CR>")
     buf_map(bufnr, "n", "]a", ":LspDiagNext<CR>")
     buf_map(bufnr, "n", "ga", ":RustCodeAction<CR>")
+    buf_map(bufnr, "n", "K", ":RustHoverActions<CR>")
     buf_map(bufnr, "i", "<C-x><C-x>", "<cmd> LspSignatureHelp<CR>")    
 end
 
 local rust_opts = {
     tools = { -- rust-tools options
         autoSetHints = true,
-        hover_with_actions = true,
         inlay_hints = {
             show_parameter_hints = true,
             parameter_hints_prefix = "",

@@ -42,13 +42,16 @@ g.everforest_background = 'soft'
 g.everforest_better_performance = 1
 
 -- remove default mapping for lf (lf opens in floatterm as alt. to NERDTree)
-g.lf_map_keys = 0
-g.lf_replace_netrw = 1
-g.floaterm_height = 0.9
-g.floaterm_width = 0.9
-
+-- g.lf_map_keys = 0
+-- g.lf_replace_netrw = 1
+-- g.floaterm_height = 0.9
+-- g.floaterm_width = 0.9
 -- window settings
-vim.cmd("colorscheme everforest")
+--
+-- g.catppuccin_flavour = "macchiato"
+-- require("catppuccin").setup()
+
+vim.cmd("colorscheme tokyonight-night")
 -- enable this for transparent BG:D only then limelight will not work :(
 -- vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
 vim.cmd("let NERDTreeShowHidden=1")

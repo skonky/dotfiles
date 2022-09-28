@@ -1,29 +1,14 @@
-default_border pixel 2
+default_border pixel 5
+
+client.focused #2ac3de #2ac3de #2ac3de #2ac3de #2ac3de
+client.unfocused #414868 #414868 #414868 #414868 #414868
 
 # Set wallpaper
-output * bg $HOME/Wallpapers/etc/pexels-stephan-seeber-1054218.jpg fill
+#output * bg $HOME/Wallpapers/tokyo/wallhaven-m9j35y.jpg fill
+output * bg $HOME/Wallpapers/tokyo/wallhaven-pkr6mp.png fill
+#output * bg $HOME/Wallpapers/tokyo/wallhaven-e76kr8.jpg fill
 
 # Status Bar:
 # Read `man 5 sway-bar` for more information about this section.
-bar {
-    position bottom
-    font Fantasque Sans Mono Nerd Font 11
-    status_command while $HOME/scripts/sway-status.sh; do sleep 1; done
-    # status_command i3status
+bar swaybar_command waybar
 
-    colors {
-        # bar colors
-        background #323232
-        # colors for workspaces
-        active_workspace #FF000000 #FF000000 #5c5c5c
-        focused_workspace #20A5BA #20A5BA #ffffff
-        inactive_workspace #C6C6C6 #C6C6C6 #5C5C5C
-        urgent_workspace #C30771 #C30771 #FFFFFF
-        # colors for the status_commands
-        statusline #ffffff
-        focused_statusline #F1F1F1 
-    }
-}
-
-client.focused #20A5BA #20A5BA #FFFFFF #20A5BA #20A5BA
-client.urgent  #C30771 #C30771 #FFFFFF #C30771 #C30771

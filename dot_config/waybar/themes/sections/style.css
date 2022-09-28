@@ -1,0 +1,178 @@
+@import "./colors.css";
+@import "./bar.css";
+@import "./workspaces.css";
+
+* {
+  font-family: "Fira Code", "Font Awesome 5 Free";
+  font-size: 12px;
+}
+
+@keyframes blink {
+  to {
+    color: @urgent;
+  }
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#bluetooth,
+#pulseaudio,
+#tray {
+  padding: 3px 10px;
+  color: @color1;
+  margin: 0;
+}
+
+#mode {
+  background: @bg1;
+  color: @primary-text-color-black;
+  padding: 0 10px;
+  margin-left: 10px;
+}
+
+#window {
+  font-family: "FantasqueSansMono NF";
+  letter-spacing: 1px;
+  font-size: 14px;
+  border-radius: 20px;
+  padding: 0 10px;
+  background: @byzantine;
+  color: #cfc9c2;
+}
+
+window#waybar.empty #window {
+  background: transparent;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+tooltip {
+  background: #1a1b26;
+  border-color: @bg2;
+}
+tooltip label {
+  text-shadow: none;
+  color: @color1;
+  font-size: 13px;
+}
+
+#battery {
+  background-color: #0b3e47;
+  color: @color1;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: @color1;
+}
+
+#battery.critical:not(.charging) {
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#tray {
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: @urgent;
+}
+
+label:focus {
+  background-color: #000000;
+}
+
+#memory {
+  background-color: @bg3;
+  color: @color1;
+}
+
+#disk {
+}
+
+#network.disconnected {
+  opacity: 0.4;
+  color: @primary-text-color;
+}
+
+#pulseaudio {
+  background-color: @bg2;
+  color: @color1;
+}
+
+#pulseaudio.muted {
+  opacity: 0.4;
+}
+
+#keyboard-state {
+}
+
+#keyboard-state > label {
+}
+
+#keyboard-state > label.locked {
+}
+
+#bluetooth {
+  background-color: @bg2;
+  color: @color1;
+}
+
+#clock {
+  background-color: #0b3e47;
+  color: @color1;
+}
+
+#network {
+  background-color: @bg3;
+  color: @color1;
+  border-radius: 0;
+}
+
+#cpu {
+  background-color: @bg3;
+  color: @color1;
+  border-radius: 0;
+}
+
+#temperature {
+  border-radius: 0;
+  background-color: @bg3;
+  color: @color1;
+}
+
+#temperature.critical {
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#backlight {
+  border-radius: 0;
+  background-color: #0b3e47;
+  color: @color1;
+}
