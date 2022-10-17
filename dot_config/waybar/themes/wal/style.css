@@ -1,0 +1,156 @@
+@import "./colors.css";
+@import "./bar.css";
+@import "./workspaces.css";
+
+* {
+  font-family: "Fira Code", "Font Awesome 5 Free";
+  font-size: 13px;
+}
+
+@keyframes blink {
+  to {
+    color: @urgent;
+  }
+}
+.modules-right {
+  background-color: @modules-container-bg;
+}
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#bluetooth,
+#pulseaudio,
+#tray {
+  padding: 0 10px;
+  color: #ffffff;
+  margin: 10px 5px;
+  border-radius: 5px;
+  background-color: @modules-item-bg;
+}
+
+#mode {
+  background: @color10;
+  color: @foreground;
+  margin: 10px 5px;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+#window {
+  font-family: "FantasqueSansMono NF";
+  letter-spacing: 1px;
+  font-size: 14px;
+  border-radius: 5px;
+  padding: 0 10px;
+  background: @window-bg;
+  color: @foreground;
+  margin: 10px;
+}
+
+window#waybar.empty #window {
+  background: transparent;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+tooltip {
+  background: @background;
+}
+tooltip label {
+  color: @color5;
+  font-size: 14px;
+}
+
+#battery {
+}
+
+#battery.charging,
+#battery.plugged {
+  color: @modules-positive;
+}
+
+#battery.critical:not(.charging) {
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#tray {
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: @urgent;
+}
+
+label:focus {
+  background-color: #000000;
+}
+
+#clock {
+}
+
+#cpu {
+}
+
+#memory {
+}
+
+#disk {
+}
+
+#backlight {
+}
+#network {
+}
+
+#network.disconnected {
+  opacity: 0.4;
+  color: @primary-text-color;
+}
+
+#pulseaudio {
+}
+
+#pulseaudio.muted {
+  opacity: 0.4;
+}
+
+#temperature {
+}
+
+#temperature.critical {
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#keyboard-state {
+}
+
+#keyboard-state > label {
+}
+
+#keyboard-state > label.locked {
+}

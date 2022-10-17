@@ -12,6 +12,9 @@ bindsym $mod+Shift+x exec swaylock -i $lock_bg -s fill
 # Start launcher
 bindsym $mod+d exec $menu
 
+# Start note taking app
+bindsym $mod+n exec rofi-todo -f ~/Notes/notes.json
+bindsym $mod+Shift+t exec rofi -show themes:~/scripts/wal-theme-switcher.sh
 floating_modifier $mod normal
 
 bindsym $mod+Shift+c reload
@@ -89,7 +92,7 @@ bindsym $mod+b splith
 bindsym $mod+v splitv
 
 # Switch the current container between different layout styles
-# bindsym $mod+s layout stacking
+bindsym $mod+s layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 

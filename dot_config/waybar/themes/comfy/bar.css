@@ -1,3 +1,8 @@
+window > box {
+  margin: 20px 30px;
+  margin-top: 0px;
+}
+
 window#waybar {
   background-color: @bar-bg;
   transition-property: background-color;

@@ -13,8 +13,8 @@
 
 # app launcher menu
 # set $menu bemenu-run 
-    set $menu tofi-run -c ~/.config/tofi/config | xargs swaymsg exec --
-
+    # set $menu tofi-run -c ~/.config/tofi/config | xargs swaymsg exec --
+    set $menu rofi -show run
 
 
 ### Key bindings

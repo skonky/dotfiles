@@ -1,0 +1,94 @@
+# Window configuration
+draw_bold_text_with_bright_colors: true
+env:
+  TERM: xterm-256color
+# Colors (PaperColor - Light)
+colors:
+  # Default colors
+  primary:
+    background: "0xd5d6db"
+    foreground: "0x343b58"
+
+  cursor:
+    text: "0xd5d6db"
+    cursor: "0x444444"
+
+  # Normal colors
+  normal:
+    black: "0xeeeeee"
+    red: "0xaf0000"
+    green: "0x008700"
+    yellow: "0x5f8700"
+    blue: "0x0087af"
+    magenta: "0x878787"
+    cyan: "0x005f87"
+    white: "0x444444"
+
+  # Bright colors
+  bright:
+    black: "0xbcbcbc"
+    red: "0x8c4351"
+    green: "0x485e30"
+    yellow: "0x8700af"
+    blue: "0x0f4b6e"
+    magenta: "0x5a4a78"
+    cyan: "0x166775"
+    white: "0x005f87"
+
+# TokyoNight Alacritty Colors
+# colors:
+#   # Default colors
+#   primary:
+#     background: "0xd5d6db"
+#     foreground: "0x343b58"
+
+#   # Normal colors
+#   normal:
+#     black: "0x15161e"
+#     red: "0xf7768e"
+#     green: "0x9ece6a"
+#     yellow: "0xe0af68"
+#     blue: "0x7aa2f7"
+#     magenta: "0xbb9af7"
+#     cyan: "0x7dcfff"
+#     white: "0xa9b1d6"
+
+#   # Bright colors
+#   bright:
+#     black: "0x414868"
+#     red: "0xf7768e"
+#     green: "0x9ece6a"
+#     yellow: "0xe0af68"
+#     blue: "0x7aa2f7"
+#     magenta: "0xbb9af7"
+#     cyan: "0x7dcfff"
+#     white: "0xc0caf5"
+
+#   indexed_colors:
+#     - { index: 16, color: "0xff9e64" }
+#     - { index: 17, color: "0xdb4b4b" }
+
+window:
+  # dynamic_padding: false
+  padding:
+    y: 0 # THIS EXACT LINE NUMBER IS USED IN nvim/init.lua DONT MOVE IT
+    x: 0 # THIS EXACT LINE NUMBER IS USED IN nvim/init.lua DONT MOVE IT
+
+# Font configuration
+font:
+  size: 13
+  normal:
+    family: JetBrains Mono Nerd Font
+    style: Bold
+
+  medium:
+    family: JetBrains Mono Nerd Font
+    style: Bold
+
+  bold:
+    family: JetBrains Mono Nerd Font
+    style: Bold
+
+  italic:
+    family: JetBrains Mono Nerd Font
+    style: Italic

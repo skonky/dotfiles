@@ -1,14 +1,37 @@
 default_border pixel 5
 
-client.focused #2ac3de #2ac3de #2ac3de #2ac3de #2ac3de
-client.unfocused #414868 #414868 #414868 #414868 #414868
+# SETUP WITH PYWAL
+include "$HOME/.cache/wal/colors-sway"
+output * bg $wallpaper fill
+client.focused $color3 $color3 $color0 $color3 $color3
+client.unfocused $color0 $color0 $color3 $color0 $color0
+# END SETUP WITH PYWAL
+
+# client.focused #cfc9c2 #cfc9c2 #cfc9c2 #cfc9c2 #cfc9c2
+# client.unfocused #414868 #414868 #414868 #414868 #414868
+
+# tokyo night lt blue
+# client.focused #2ac3de #2ac3de #2ac3de #2ac3de #2ac3de
+# client.unfocused #414868 #414868 #414868 #414868 #414868
 
 # Set wallpaper
-#output * bg $HOME/Wallpapers/tokyo/wallhaven-m9j35y.jpg fill
-output * bg $HOME/Wallpapers/tokyo/wallhaven-pkr6mp.png fill
-#output * bg $HOME/Wallpapers/tokyo/wallhaven-e76kr8.jpg fill
+# dark mode
+# output * bg $HOME/Wallpapers/tokyo/wallhaven-pkr6mp.png fill
+# output * bg $HOME/Wallpapers/etc/wallhaven-x8m5jz.jpg fill
+
+
 
 # Status Bar:
 # Read `man 5 sway-bar` for more information about this section.
 bar swaybar_command waybar
 
+# gaps (used with custom comfy waybar theme)
+# gaps horizontal 12 
+# gaps bottom 0
+# gaps top 12
+# gaps inner 20
+
+# opacity for alacritty
+set $opacity 0.90
+for_window [class="alacritty"] opacity $opacity
+for_window [app_id=".*"] opacity $opacity

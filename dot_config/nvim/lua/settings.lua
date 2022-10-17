@@ -19,7 +19,7 @@ set.wrap=false
 set.swapfile=false
 set.backup=false
 set.incsearch=true
-set.termguicolors=true
+set.termguicolors=false -- ONLY SET TO FALSE IF YOU USE COLORSCHEME "wal"
 set.scrolloff=8
 set.showmode=false
 set.completeopt="menuone,noinsert,noselect"
@@ -29,7 +29,7 @@ set.updatetime=50
 set.signcolumn="yes"
 set.shortmess="c"
 set.clipboard="unnamedplus"
-set.background="dark"
+-- set.background="dark"
 
 -- global settings
 g.dart_format_on_save = 1
@@ -51,8 +51,10 @@ g.everforest_better_performance = 1
 -- g.catppuccin_flavour = "macchiato"
 -- require("catppuccin").setup()
 
-vim.cmd("colorscheme tokyonight-night")
+-- vim.cmd("colorscheme tokyonight-day")
+-- vim.cmd("colorscheme tokyonight-night")
+vim.cmd("colorscheme pywal")
 -- enable this for transparent BG:D only then limelight will not work :(
--- vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
+vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
 vim.cmd("let NERDTreeShowHidden=1")
 

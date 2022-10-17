@@ -6,6 +6,7 @@
 @define-color black-400 #414868;
 @define-color black-500 @black;
 @define-color black-600 #000000;
+@define-color black-900 #cfc9c2;
 
 /* RED */
 @define-color red #f7768e;
@@ -13,6 +14,7 @@
 
 /* GREEN */
 @define-color green #9ece6a;
+@define-color green-100 #b4f9f8;
 @define-color green-500 @green;
 @define-color green-600 #73daca;
 
@@ -27,10 +29,15 @@
 @define-color orange-50 #cfc9c2;
 @define-color orange-400 #e0af68;
 @define-color orange-500 @orange;
+
+/* PURPLE */
+@define-color purple #bb9af7;
+@define-color purple-500 @purple;
+
 /* DESIGN TOKENS */
 
 /* BAR */
-@define-color bar-bg @black-500;
+@define-color bar-bg transparent;
 @define-color border-color @blue-500;
 
 /* TEXT */
@@ -38,8 +45,9 @@
 @define-color foreground-dark @black-500;
 
 /* WORKSPACES */
-@define-color workspace-focused @blue-500;
-@define-color workspace-unfocused alpha(#fff, 0.1);
+@define-color workspace-background transparent;
+@define-color workspace-focused @black-900;
+@define-color workspace alpha(#fff, 0.1);
 
 /* STATUSES */
 @define-color positive @green-500;
@@ -48,4 +56,9 @@
 
 /* MODULES */
 @define-color modules-foreground @foreground-light;
-@define-color modules-background @black-400;
+@define-color modules-background @black-900;
+@define-color modules-item-background @black-900;
+@define-color modules-item-foreground @black-500;
+
+@define-color window-foreground @black-500;
+@define-color window-background @black-900;

@@ -14,7 +14,8 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'RishabhRD/popfix'
 Plug 'RishabhRD/nvim-lsputils'
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'glepnir/dashboard-nvim'
+Plug 'lukas-reineke/lsp-format.nvim'
+
 
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
@@ -53,23 +54,18 @@ Plug 'lewis6991/gitsigns.nvim'
 
 -- colorschemes
 Plug 'liuchengxu/space-vim-dark'
-Plug 'tomasiser/vim-code-dark'
+Plug 'dylanaraps/wal.vim' 
+Plug 'joshdick/onedark.vim'
+Plug 'ellisonleao/gruvbox.nvim'
+Plug 'patstockwell/vim-monokai-tasty'
 Plug('catppuccin/nvim', {['as'] = 'catpuccin'})
 Plug('sonph/onehalf', {['rtp'] = 'vim/'})
-Plug('lourenci/github-colors', { ['branch'] = 'main' })
 Plug('folke/tokyonight.nvim', { ['branch'] = 'main' })
-Plug('embark-theme/vim', { ['as'] = 'embark', ['branch'] = 'main' })
-Plug('shaunsingh/oxocarbon.nvim', { ['do']= './install.sh' })
-Plug('EdenEast/nightfox.nvim')
+Plug('AlphaTechnolog/pywal.nvim', { ['as']= 'pywal' })
+
 
 -- Plug('prettier/vim-prettier', { ['do'] = 'yarn install --frozen-lockfile --production' })
 
-Plug 'joshdick/onedark.vim'
-Plug 'sainnhe/everforest'
-Plug 'dracula/vim'
-Plug 'ellisonleao/gruvbox.nvim'
-Plug 'bluz71/vim-moonfly-colors'
-Plug 'patstockwell/vim-monokai-tasty'
 
 
 vim.call('plug#end')

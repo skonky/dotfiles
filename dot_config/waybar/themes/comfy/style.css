@@ -1,11 +1,11 @@
-@import "./colors.css";
-@import "./bar.css";
-@import "./workspaces.css";
-
 * {
   font-family: "Fira Code", "Font Awesome 5 Free";
   font-size: 12px;
 }
+
+@import "./colors.css";
+@import "./bar.css";
+@import "./workspaces.css";
 
 @keyframes blink-urgent {
   to {
@@ -32,28 +32,43 @@
 #tray {
   padding: 3px 10px;
   margin: 0;
-  background-color: @black-400;
-  color: @foreground-light;
+  background-color: @modules-item-background;
+  color: @modules-item-foreground;
   border-radius: 0;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 #mode {
   background: @urgent;
   color: @foreground-dark;
   padding: 0 10px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 #window {
   font-family: "FantasqueSansMono NF";
   letter-spacing: 1px;
   font-size: 14px;
-  padding: 0 10px;
-  color: @orange-50;
+  padding: 4px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  color: @window-foreground;
+  background-color: @window-background;
+  border-radius: 8px;
+  margin-left: 6px;
+  margin-right: 0;
 }
 
 window#waybar.empty #window {
+  opacity: 0;
 }
 
+.modules-left,
+.modules-right {
+  padding: 0;
+}
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
   margin-left: 0;
@@ -142,7 +157,7 @@ label:focus {
 }
 
 #pulseaudio.muted {
-  opacity: 0.4;
+  /* opacity: 0.4; */
 }
 
 #keyboard-state {
@@ -155,9 +170,11 @@ label:focus {
 }
 
 #bluetooth {
+  border-radius: 8px 0 0 8px;
 }
 
 #clock {
+  border-radius: 0 8px 8px 0;
 }
 
 #network {

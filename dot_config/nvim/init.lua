@@ -1,6 +1,7 @@
 -- Read this for help
 -- https://vonheikemen.github.io/devlog/tools/configuring-neovim-using-lua/
 
+
 require('plugins')
 
 require('settings')
@@ -13,6 +14,21 @@ require("nvim-tree").setup()
 
 require('mason').setup()
 
+
+local pywal = require('pywal')
+pywal.setup()
+
+local lualine = require('lualine')
+
+lualine.setup {
+  options = {
+    theme = 'pywal-nvim',
+  },
+}
+
+
+-- remove padding in alacritty when opening nvim
+--
 -- function Sad(line_nr, from, to, fname)
 --   vim.cmd(string.format("silent !sed -i '%ss/%s/%s/' %s", line_nr, from, to, fname)) 
 -- end

@@ -10,7 +10,7 @@ end
 
 local on_attach = function(client, bufnr)
     vim.cmd("command! LspDef lua vim.lsp.buf.definition()")
-    vim.cmd("command! LspFormatting lua vim.lsp.buf.formatting()")
+    vim.cmd("command! LspFormatting lua vim.lsp.buf.format({async = true})")
     vim.cmd("command! LspCodeAction lua vim.lsp.buf.code_action()")
     vim.cmd("command! LspHover lua vim.lsp.buf.hover()")
     vim.cmd("command! LspRename lua vim.lsp.buf.rename()")
@@ -29,23 +29,24 @@ local on_attach = function(client, bufnr)
     buf_map(bufnr, "n", "]a", ":LspDiagNext<CR>")
     buf_map(bufnr, "n", "ga", ":LspCodeAction<CR>")
     buf_map(bufnr, "i", "<C-x><C-x>", "<cmd> LspSignatureHelp<CR>")    
-    if client.resolved_capabilities.document_formatting then
-        vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
-    end
+    -- if client.server_capabilities.document_formatting then
+    --     vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format({async = true})")
+    -- end
 end
 
 lspconfig.tsserver.setup({
     on_attach = function(client, bufnr)
-        client.resolved_capabilities.document_formatting = false
-        client.resolved_capabilities.document_range_formatting = false        
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+
         local ts_utils = require("nvim-lsp-ts-utils")
-        -- ts_utils.setup({
-        --     -- eslint_bin = "eslint_d",
-        --     -- eslint_enable_diagnostics = true,
-        --     -- eslint_enable_code_actions = true,
-        --     -- enable_formatting = true,
-        --     -- formatter = "prettier",
-        -- })
+        ts_utils.setup({
+            eslint_bin = "eslint_d",
+            eslint_enable_diagnostics = true,
+            eslint_enable_code_actions = true,
+            enable_formatting = true,
+            formatter = "prettierd",
+        })
         ts_utils.setup_client(client)
         buf_map(bufnr, "n", "gs", ":TSLspOrganize<CR>")
         buf_map(bufnr, "n", "gi", ":TSLspRenameFile<CR>")
@@ -57,7 +58,6 @@ lspconfig.tsserver.setup({
 lspconfig.elmls.setup({on_attach = on_attach})
 
 null_ls.setup({ 
-  on_attach = on_attach,
   sources ={
       null_ls.builtins.formatting.prettierd,
       null_ls.builtins.diagnostics.write_good,
@@ -65,7 +65,21 @@ null_ls.setup({
       null_ls.builtins.diagnostics.eslint_d,
       null_ls.builtins.code_actions.eslint_d,
       null_ls.builtins.formatting.eslint_d
-  }
+  },
+  on_attach = function(client, bufnr)
+      if client.supports_method("textDocument/formatting") then
+            vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                group = augroup,
+                buffer = bufnr,
+                -- on 0.8, you should use vim.lsp.buf.format instead and wrap the callback with a function 
+                callback = function()
+                    vim.lsp.buf.format()
+                end
+            })
+        end
+    end,
+    debug = false,
 })
 
 lspconfig.gopls.setup({on_attach = on_attach})
