@@ -1,9 +1,7 @@
 {
   // "layer": "top", // Waybar at top layer
   "position": "bottom", // Waybar position (top|bottom|left|right)
-  // "width": "10px", // Waybar width
-  // "height": 25,
-  "spacing": 0, // Gaps between modules (4px)
+  "spacing": 16, // Gaps between modules (4px)
   // Choose the order of the modules
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": ["sway/window"],
@@ -11,10 +9,10 @@
     "bluetooth",
     "pulseaudio",
     "network",
-    "cpu",
-    "memory",
-    "temperature",
-    "backlight",
+    // "cpu",
+    // "memory",
+    // "temperature",
+    // "backlight",
     "keyboard-state",
     "battery",
     "clock"
@@ -22,23 +20,23 @@
   // Modules configuration
   "sway/workspaces": {
     "disable-scroll": true,
-    "all-outputs": false,
-    "format": "{icon}",
-    "format-icons": {
-      "1": "I",
-      "2": "II",
-      "3": "III",
-      "4": "IV",
-      "5": "V",
-      "6": "VI",
-      "7": "VII",
-      "8": "VIII",
-      "9": "IX",
-      "10": "X",
-      "urgent": "",
-      "focused": "",
-      "default": ""
-    }
+    "all-outputs": false
+    // "format": "{icon}"
+    // "format-icons": {
+    //   "1": "I",
+    //   "2": "II",
+    //   "3": "III",
+    //   "4": "IV",
+    //   "5": "V",
+    //   "6": "VI",
+    //   "7": "VII",
+    //   "8": "VIII",
+    //   "9": "IX",
+    //   "10": "X",
+    // "urgent": "",
+    // "focused": "",
+    // "default": ""
+    // }
   },
   "keyboard-state": {
     "numlock": true,
@@ -59,15 +57,14 @@
     "format": "{title}",
     "tooltip": true,
     "icon": false,
-    "max-length": 300,
-    "rewrite": {
-      "(.*)rave": "🌎 $1",
-      "nvim(.*)": " neovim "
-    }
+    "max-length": 500
+    // "rewrite": {
+    //   "(.*)rave": "🌎 $1",
+    // }
   },
   "clock": {
     "format": "{:%H:%M} ",
-    // "timezone": "America/New_York",
+    "timezone": "Europe/Amsterdam",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%Y-%m-%d} "
   },
@@ -93,7 +90,7 @@
   },
   "battery": {
     "states": {
-      // "good": 95,
+      "good": 80,
       "warning": 30,
       "critical": 15
     },

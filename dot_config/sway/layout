@@ -3,8 +3,8 @@ default_border pixel 5
 # SETUP WITH PYWAL
 include "$HOME/.cache/wal/colors-sway"
 output * bg $wallpaper fill
-client.focused $color3 $color3 $color0 $color3 $color3
-client.unfocused $color0 $color0 $color3 $color0 $color0
+client.focused $color2 $color2 $color0 $color2 $color2
+client.unfocused $color0 $color0 $color2 $color0 $color0
 # END SETUP WITH PYWAL
 
 # client.focused #cfc9c2 #cfc9c2 #cfc9c2 #cfc9c2 #cfc9c2
@@ -26,10 +26,10 @@ client.unfocused $color0 $color0 $color3 $color0 $color0
 bar swaybar_command waybar
 
 # gaps (used with custom comfy waybar theme)
-# gaps horizontal 12 
-# gaps bottom 0
-# gaps top 12
-# gaps inner 20
+gaps horizontal 5
+gaps bottom 0
+gaps top 10
+gaps inner 10
 
 # opacity for alacritty
 set $opacity 0.90
