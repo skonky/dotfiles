@@ -1,53 +1,34 @@
--- Read this for help
--- https://vonheikemen.github.io/devlog/tools/configuring-neovim-using-lua/
+vim.defer_fn(function()
+  pcall(require, "impatient")
+end, 0)
 
+require "core"
+require "core.options"
 
-require('plugins')
+-- setup packer + plugins
+local fn = vim.fn
+local install_path = fn.stdpath "data" .. "/site/pack/packer/opt/packer.nvim"
 
-require('settings')
+if fn.empty(fn.glob(install_path)) > 0 then
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1e222a" })
+  print "Cloning packer .."
+  fn.system { "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path }
 
-require('mappings')
+  -- install plugins + compile their configs
+  vim.cmd "packadd packer.nvim"
+  require "plugins"
+  vim.cmd "PackerSync"
 
-require('lualine').setup()
+  -- install binaries from mason.nvim & tsparsers
+  vim.api.nvim_create_autocmd("User", {
+    pattern = "PackerComplete",
+    callback = function()
+      vim.cmd "bw | silent! MasonInstallAll" -- close packer window
+      require("packer").loader "nvim-treesitter"
+    end,
+  })
+end
 
-require("nvim-tree").setup()
+pcall(require, "custom")
 
-require('mason').setup()
-
-
-local pywal = require('pywal')
-pywal.setup()
-
-local lualine = require('lualine')
-
-lualine.setup {
-  options = {
-    theme = 'pywal-nvim',
-  },
-}
-
-
--- remove padding in alacritty when opening nvim
---
--- function Sad(line_nr, from, to, fname)
---   vim.cmd(string.format("silent !sed -i '%ss/%s/%s/' %s", line_nr, from, to, fname)) 
--- end
-
--- function IncreasePadding() 
---   Sad('101', 0, 7, '~/.config/alacritty/alacritty.yml')
---   Sad('102', 0, 7, '~/.config/alacritty/alacritty.yml')
--- end
-
--- function DecreasePadding()
---   Sad('101', 7, 0, '~/.config/alacritty/alacritty.yml')
---   Sad('102', 7, 0, '~/.config/alacritty/alacritty.yml')
--- end
-
--- vim.cmd[[
---   augroup ChangeAlacrittyPadding
---    au! 
---    au VimEnter * lua DecreasePadding()
---    au VimLeavePre * lua IncreasePadding()
---   augroup END 
--- ]]
-
+require("core.utils").load_mappings()

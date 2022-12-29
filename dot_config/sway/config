@@ -9,12 +9,12 @@
 # applications
     set $term alacritty
     set $browser brave
-    set $lock_bg ~/Wallpapers/nord/ign_animeGirlSleeping.png
+    set $lock_bg ~/Pictures/Wallpapers/wallhaven/wallhaven-nk7qd1.png
 
 # app launcher menu
 # set $menu bemenu-run 
-    # set $menu tofi-run -c ~/.config/tofi/config | xargs swaymsg exec --
-    set $menu rofi -show run
+    set $menu tofi-run -c ~/.config/tofi/config | xargs swaymsg exec --
+    # set $menu rofi -show run
 
 
 ### Key bindings

@@ -1,0 +1,25 @@
+#workspaces {
+  font-family: "GohuFont Nerd Font";
+  margin-right: 8px;
+}
+
+#workspaces button {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  border-bottom: 1px solid #000;
+}
+
+#workspaces button.focused {
+  opacity: 1;
+  border-color: #fff;
+}
+
+#workspaces button.urgent {
+  border-color: #fb4934;
+}
+
+#window {
+  color: #fff;
+}
