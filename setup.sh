@@ -3,21 +3,11 @@ sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/ya
 
 ## > Install packages with yay
 # LOOK AT ALL THIS BLOAT LOL
-yay -S sway base-devel waybar kubectl swaybg swaylock swayidle neovim polkit nitch neofetch wlroots wayland-protocols pcre2 json-c pango cairo wdisplays xorg-xwayland dmenu tmux alacritty zsh curl wget rofi gitui wdisplays brave neovide firefox grimshot ly wdisplays bluez bluez-utils pulseaudio-bluetooth meson scdoc wayland-protocols mpv feh dunst xclip bashtop ripgrep bat lsd pcmanfm unzip zip openconnect git diff-so-fancy
-
-echo "Packages installed... finally..."
+yay -S sway waybar kubectl swaybg swaylock swayidle neovim polkit neofetch wlroots wayland-protocols pcre2 json-c pango cairo wdisplays xorg-xwayland dmenu tmux alacritty zsh curl wget rofi tofi gitui wdisplays neovide grimshot ly wdisplays bluez bluez-utils meson scdoc wayland-protocols mpv feh dunst xclip bashtop ripgrep bat lsd pcmanfm unzip zip openconnect git diff-so-fancy nitch nerd-fonts-agave ttf-font-awesome-5
 
 ####################
 ## > Change default shell and install ohmyzsh
 chsh -s $(which zsh) && zsh
-# Install ohmyzsh
-sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-# Install plugins and p10k
-git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-####################
-
 ####################
 ## > node management
 # make cache folder (if missing) and take ownership
@@ -36,43 +26,49 @@ rm n
 npm install -g n
 # install yarn through corepack
 corepack prepare yarn@stable --activate
-echo "node, npm and yarn is installed"
+####################
+
+####################
+## > Install ohmyzsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Install plugins and p10k
+git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ####################
 
 ####################
 ## > Set up rupa/z jump around
-cd /opt && wget https://raw.githubusercontent.com/rupa/z/master/z.sh
-echo "rupa/z jump around installed!"
+wget https://raw.githubusercontent.com/rupa/z/master/z.sh
+sudo mv z.sh /opt
 ####################
 
 ####################
 ## > Install NvChad
-echo "Removing nvim config, share and cache..."
 rm -rf ~/.config/nvim
 rm -rf ~/.local/share/nvim
 rm -rf ~/.cache/nvim
 
 mkdir -p ~/.config/nvim
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-echo "nvim setup finished! (dont forget to install LSP servers and shit)"
 ####################
 
 ####################
 ## > configs
-sh -c "$(curl -fsLS get.chezmoi.io)" --init --apply frank-selhorst
-echo "chezmoi did it's thingy! (yay)"
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply frank-selhorst
 
+####################
+## > autostart sway in zsh session
+echo "sway" >>~/.zprofile
 ####################
 
 echo "SETUP FINISHED!"
 echo "----------------------------------------------------------------"
-echo "There are a couple of steps left:"
-
-echo "1. install the plugins in nvim via nvim :pluginstall"
-echo "2. Install the tmux plugins https://github.com/tmux-plugins/tpm#installing-plugins"
-echo "3. Install fonts"
-echo "4. Install lsp servers for neovim"
+echo "1. Install lsp servers for neovim"
+echo "2. fix the wallpaper"
 echo ""
-echo "Used fonts: FontAwesome5(free), Fira Code, FantasqueSansMono NF"
+echo "Used fonts: FontAwesome5(free), Agave Nerd Font"
 echo "https://www.nerdfonts.com/"
+echo "https://aur.archlinux.org/packages?K=nerd-fonts-&outdated=off"
 echo "Wallpapers are from: https://wallhaven.cc"
