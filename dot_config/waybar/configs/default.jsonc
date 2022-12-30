@@ -3,21 +3,24 @@
   "position": "bottom", // Waybar position (top|bottom|left|right)
   // "height": 10, // Waybar height (to be removed for auto height)
   // "width": 1280, // Waybar width
-  "spacing": 0, // Gaps between modules (4px)
+  "spacing": 5, // Gaps between modules (4px)
   // Choose the order of the modules
-  "modules-left": ["sway/workspaces", "sway/mode"],
-  "modules-center": ["sway/window"],
+  "modules-left": ["sway/workspaces", "sway/window"],
+  "modules-center": [],
   "modules-right": [
-    "pulseaudio",
     "network",
-    "cpu",
-    "memory",
-    "temperature",
-    "backlight",
-    "keyboard-state",
+    "custom/sep",
+
+    "pulseaudio",
+    "custom/sep",
+
+    "bluetooth",
+    "custom/sep",
+
     "battery",
-    "clock",
-    "tray"
+    "custom/sep",
+
+    "clock"
   ],
   // Modules configuration
   // "sway/workspaces": {
@@ -35,6 +38,18 @@
   //         "default": ""
   //     }
   // },
+  "sway/scratchpad": {
+    "format": "{icon} {count}",
+    "show-empty": false,
+    "format-icons": ["", ""],
+    "tooltip": true,
+    "tooltip-format": "{app}: {title}"
+  },
+  "custom/sep": {
+    "format": "|",
+    "interval": "once",
+    "tooltip": false
+  },
   "keyboard-state": {
     "numlock": true,
     "capslock": true,
@@ -53,7 +68,7 @@
   },
   "clock": {
     "format": "{:%H:%M} ",
-    // "timezone": "America/New_York",
+    "timezone": "Europe/Amsterdam",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%Y-%m-%d} "
   },

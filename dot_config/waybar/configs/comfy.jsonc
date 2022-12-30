@@ -1,45 +1,43 @@
 {
-  // "layer": "top", // Waybar at top layer
+  "layer": "top", // Waybar at top layer
   "position": "bottom", // Waybar position (top|bottom|left|right)
-  "width": "50%", // Waybar width
-  // "height": 25,
+  "width": "90%", // Waybar width
+  "height": 25,
   "spacing": 0, // Gaps between modules (4px)
-  // Choose the order of the modules
-  "modules-left": ["sway/workspaces", "sway/mode"],
-  "modules-center": ["sway/window"],
+  "modules-left": ["sway/workspaces", "sway/window", "sway/mode"],
+  "modules-center": [],
   "modules-right": [
+    "custom/ticker",
     "bluetooth",
     "pulseaudio",
     "network",
-    "cpu",
-    "memory",
-    "temperature",
-    "backlight",
+    // "backlight",
     "keyboard-state",
     "battery",
     "clock"
   ],
   // Modules configuration
-  // "sway/workspaces": {
-  //   "disable-scroll": true,
-  //   "all-outputs": false,
-  //   "format": "{icon}",
-  //   "format-icons": {
-  //     "1": "I",
-  //     "2": "II",
-  //     "3": "III",
-  //     "4": "IV",
-  //     "5": "V",
-  //     "6": "VI",
-  //     "7": "VII",
-  //     "8": "VIII",
-  //     "9": "IX",
-  //     "10": "X",
-  //     "urgent": "",
-  //     "focused": "",
-  //     "default": ""
-  //   }
-  // },
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false
+    // "format": "{icon}",
+    // "format-icons": {
+    //   "1": "ⅰ",
+    //   "2": "ⅱ",
+    //   "3": "ⅲ",
+    //   "4": "ⅳ",
+    //   "5": "ⅴ",
+    //   "6": "",
+    //   "7": "",
+    //   "8": "",
+    //   "9": "",
+    //   "10": "",
+    //   "urgent": "",
+    //   "focused": "*",
+    //   "default": ""
+    // }
+  },
+
   "keyboard-state": {
     "numlock": true,
     "capslock": true,
@@ -62,10 +60,10 @@
     "max-length": 300
   },
   "clock": {
-    "format": "{:%H:%M} ",
-    // "timezone": "America/New_York",
+    "format": "|  {:%H:%M}",
+    "timezone": "Europe/Amsterdam",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%Y-%m-%d} "
+    "format-alt": "|  {:%Y-%m-%d} "
   },
   "cpu": {
     "format": "",
@@ -93,9 +91,9 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon}",
+    "format": "| {icon}",
     "format-charging": "",
-    "format-plugged": "",
+    "format-plugged": "{time} ",
     "format-alt": "{time} {icon}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
@@ -103,16 +101,16 @@
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "",
-    "format-ethernet": "{ipaddr}/{cidr} ",
-    "tooltip-format": "{essid}:{ifname}@{gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr} ({signalStrength}%)"
+    "format-wifi": "|   {signalStrength}%",
+    "format-ethernet": "| {ipaddr}/{cidr} ",
+    "tooltip-format": "| {essid}:{ifname}@{gwaddr} ",
+    "format-linked": "| {ifname} (No IP) ",
+    "format-disconnected": "| Disconnected ⚠",
+    "format-alt": "| {ifname}: {ipaddr}/{cidr} ({signalStrength}%)"
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{icon}",
+    "format": "| {icon}",
     //"format": "{volume}% {icon} {format_source}",
     "format-bluetooth": "{volume}% {icon}  {format_source}",
     "format-bluetooth-muted": "muted    {format_source}",
@@ -151,5 +149,23 @@
     "escape": true,
     "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
     // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+  },
+  "custom/ticker": {
+    "format": "{icon} {}",
+    "format-icons": {
+      "default": ""
+    },
+    "exec": "$HOME/scripts/gmx.sh 2> /dev/null",
+    "interval": 30,
+    "signal": 30,
+    "tooltip": false,
+    "on-click": "brave https://coingecko.com/en/coins/gmx"
   }
 }
+
+// [module/bitcoin]
+// type = custom/script
+// exec = ~/scripts/bitcoin.sh
+// interval = 10
+// format-prefix = " "
+// format-prefix-foreground = #fff

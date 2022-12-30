@@ -1,0 +1,17 @@
+* {
+  /* font-family: "Font Awesome 5 Free"; */
+  font-family: "FontAwesome", "GohuFont Nerd Font";
+  font-size: 14px;
+}
+
+@import "./colors.css";
+@import "./bar.css";
+@import "./workspaces.css";
+
+.modules-right {
+  color: #fff;
+}
+
+#window {
+  font-family: "GohuFont Nerd Font";
+}

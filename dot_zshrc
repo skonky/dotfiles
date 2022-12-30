@@ -1,5 +1,9 @@
-pfetch
+nitch
 
+# (cat ~/.cache/wal/sequences &)
+# To add support for TTYs this line can be optionally added.
+# source ~/.cache/wal/colors-tty.sh
+#
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -27,15 +31,14 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 export DENO_INSTALL="/home/frank/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
-export PATH="$PATH:/opt/flutter/bin"
-export PATH="$PATH:$HOME/.pub-cache/bin"
-export PATH="$PATH:$HOME/Android/Sdk"
 
 alias vim='nvim'
-alias v='nvim'
+alias v='neovide --multigrid'
 alias t='tmux'
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
+alias tat='tmux a -t'
+alias tls='tmux ls'
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias ls='lsd'
 
 alias ahs='ah-start start'
@@ -63,7 +66,7 @@ alias gfo='git fetch origin'
 alias gdiff='git diff'
 alias grom='git rebase origin/master'
 alias gfirst='git log --date-order --format=%cI | tail -1'
-alias gcmdl='git checkout master && git branch --merged master | grep -v "master" | xargs -n 1 git branch -d'
+alias gcmdl='git checkout main && git branch --merged main | grep -v "main" | xargs -n 1 git branch -d'
 
 alias nrd='npm run dev'
 alias npi='npm install'
@@ -83,8 +86,10 @@ alias y='yarn'
 alias vpad='vim ~/vimpad.txt'
 alias yacl='yalc' 
 alias c='clear'
+alias play='cd ~/playground'
 
 alias bitcoin='sh ~/scripts/bitcoin.sh'
+
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # bun completions
@@ -94,10 +99,9 @@ alias bitcoin='sh ~/scripts/bitcoin.sh'
 export BUN_INSTALL="/$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-(cat ~/.cache/wal/sequences &)
-
-# To add support for TTYs this line can be optionally added.
-source ~/.cache/wal/colors-tty.sh
+# (cat ~/.cache/wal/sequences &)
+# # To add support for TTYs this line can be optionally added.
+# source ~/.cache/wal/colors-tty.sh
 
 # bun completions
 [ -s "/home/frank/.bun/_bun" ] && source "/home/frank/.bun/_bun"

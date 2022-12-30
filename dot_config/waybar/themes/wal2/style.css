@@ -12,9 +12,11 @@
     color: @urgent;
   }
 }
+
 .modules-right {
   background-color: @modules-container-bg;
 }
+
 #clock,
 #battery,
 #cpu,

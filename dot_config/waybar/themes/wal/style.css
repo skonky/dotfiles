@@ -12,9 +12,14 @@
     color: @urgent;
   }
 }
+
 .modules-right {
-  background-color: @modules-container-bg;
+  margin:0 3px;
 }
+.modules-left {
+  margin:0 3px;
+}
+
 #clock,
 #battery,
 #cpu,
@@ -25,30 +30,40 @@
 #network,
 #bluetooth,
 #pulseaudio,
+#custom-ticker,
 #tray {
-  padding: 0 10px;
-  color: #ffffff;
+  padding: 4px 8px;
   margin: 10px 5px;
   border-radius: 5px;
-  background-color: @modules-item-bg;
+  background-color: @bar-bg;
+  border: none;
 }
 
-#mode {
-  background: @color10;
-  color: @foreground;
-  margin: 10px 5px;
-  border-radius: 5px;
-  padding: 0 5px;
+#clock:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#disk:hover,
+#temperature:hover,
+#backlight:hover,
+#network:hover,
+#bluetooth:hover,
+#pulseaudio:hover,
+#tray:hover,
+#tray:hover,
+#mode:hover {
+  border: 1px;
+  border-color: #00aced;
 }
 
 #window {
   font-family: "FantasqueSansMono NF";
   letter-spacing: 1px;
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 5px;
   padding: 0 10px;
-  background: @window-bg;
-  color: @foreground;
+  background: @bar-bg;
+  color: @color5;
   margin: 10px;
 }
 
@@ -67,19 +82,20 @@ window#waybar.empty #window {
 }
 
 tooltip {
-  background: @background;
-}
-tooltip label {
-  color: @color5;
-  font-size: 14px;
+  border-radius: 8px;
+  padding: 4px 8px;
+  background: @bar-bg;
 }
 
-#battery {
+tooltip label {
+  color: @color5;
+  font-size: 16px;
+  margin: 4px 8px;
 }
 
 #battery.charging,
 #battery.plugged {
-  color: @modules-positive;
+  color: @color4;
 }
 
 #battery.critical:not(.charging) {
@@ -105,8 +121,26 @@ tooltip label {
 label:focus {
   background-color: #000000;
 }
+#bluetooth {
+  color: @color1;
+}
+#bluetooth:hover {
+  box-shadow: 0 0 0 2px alpha(@color1, 1);
+}
 
 #clock {
+  color: @color5;
+}
+#clock:hover {
+  box-shadow: 0 0 0 2px alpha(@color5, 1);
+}
+
+#custom-ticker > * {
+  color: @color11;
+}
+ 
+#custom-ticker:hover {
+  box-shadow: 0 0 0 2px alpha(@color11, 1);
 }
 
 #cpu {
@@ -118,21 +152,38 @@ label:focus {
 #disk {
 }
 
-#backlight {
-}
-#network {
+#battery {
+  color: @color4;
 }
 
+#battery:hover {
+  box-shadow: 0 0 0 2px alpha(@color4, 1);
+}
+
+#backlight {
+  color: @color2;
+}
+#network {
+  color: @color3;
+}
+
+#network:hover {
+  box-shadow: 0 0 0 2px alpha(@color3, 1);
+}
 #network.disconnected {
-  opacity: 0.4;
+  opacity: 0.6;
   color: @primary-text-color;
 }
 
 #pulseaudio {
+  color: @color2;
 }
 
 #pulseaudio.muted {
-  opacity: 0.4;
+  opacity: 0.6;
+}
+#pulseaudio:hover {
+  box-shadow: 0 0 0 2px alpha(@color2, 1);
 }
 
 #temperature {

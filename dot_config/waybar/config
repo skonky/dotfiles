@@ -1,6 +1,7 @@
 {
-    "include": ["$HOME/.config/waybar/configs/minimal.jsonc"]
-    // "include": ["$HOME/.config/waybar/configs/default.jsonc"]
+    // "include": ["$HOME/.config/waybar/configs/hyprland.jsonc"]
+    // "include": ["$HOME/.config/waybar/configs/minimal.jsonc"]
+     "include": ["$HOME/.config/waybar/configs/default.jsonc"]
     // "include": ["$HOME/.config/waybar/configs/comfy.jsonc"]
 }
 
