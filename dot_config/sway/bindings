@@ -7,14 +7,20 @@ bindsym $mod+w exec $browser
 bindsym $mod+Shift+q kill
 
 # lock the screen
-bindsym $mod+Shift+x exec swaylock -i $lock_bg -s fill
+bindsym $mod+Shift+x exec $lock_cmd
 
 # Start launcher
 bindsym $mod+d exec $menu
 
+# Get battery status
+bindsym $mod+Shift+b exec ~/scripts/battery.sh
+# Start neovide
+bindsym $mod+c exec alacritty -e nvim
+
 # Start note taking app
-bindsym $mod+n exec rofi-todo -f ~/Notes/notes.json
-bindsym $mod+Shift+t exec rofi -show themes:~/scripts/wal-theme-switcher.sh
+bindsym $mod+n exec ~/scripts/toggle_waybar.sh
+# bindsym $mod+Shift+t exec rofi -show themes:~/scripts/wal-theme-switcher.sh
+bindsym $mod+Shift+t exec rofi -show clock:~/scripts/clock.sh
 floating_modifier $mod normal
 
 bindsym $mod+Shift+c reload

@@ -1,23 +1,23 @@
-default_border pixel 1
+default_border pixel 3
 
 # SETUP WITH PYWAL
 include "$HOME/.cache/wal/colors-sway"
 output * bg $wallpaper fill
-client.focused $color2 $color2 $color0 $color2 $color2
-client.unfocused $color0 $color0 $color2 $color0 $color0
+# client.focused $color1 $color1 $color0 $color1 $color1
+# client.unfocused $color0 $color0 $color2 $color0 $color0
 # END SETUP WITH PYWAL
 
-client.focused #cfc9c2 #cfc9c2 #cfc9c2 #cfc9c2 #cfc9c2
+# client.focused #cfc9c2 #cfc9c2 #cfc9c2 #cfc9c2 #cfc9c2
 # client.unfocused #414868 #414868 #414868 #414868 #414868
 
 # tokyo night lt blue
 # client.focused #2ac3de #2ac3de #2ac3de #2ac3de #2ac3de
 #
-# client.focused #7aa2f7 #7aa2f7 #7aa2f7 #7aa2f7 #7aa2f7
+client.focused #7aa2f7 #7aa2f7 #7aa2f7 #7aa2f7 #7aa2f7
 #
 # client.focused #b8bb26 #b8bb26 #b8bb26 #b8bb26 #b8bb26
 #
-# client.unfocused #414868 #414868 #414868 #414868 #414868
+client.unfocused #414868 #414868 #414868 #414868 #414868
 
 # Set wallpaper
 # dark mode
@@ -31,14 +31,31 @@ client.focused #cfc9c2 #cfc9c2 #cfc9c2 #cfc9c2 #cfc9c2
 bar swaybar_command waybar
 
 # gaps (used with custom comfy waybar theme)
-gaps horizontal 0
-gaps bottom 0
-gaps top 0
-gaps inner 0
+gaps horizontal 10
+gaps bottom 5
+gaps top 5
+gaps inner 10
 
-# opacity for alacritty
 set $opacity 0.9
 
+# for_window [app_id=".*"] opacity 1
+for_window [app_id="514*"] opacity $opacity # 514 = neovim (wlprop)
 for_window [class="alacritty"] opacity $opacity
-for_window [app_id=".*"] opacity $opacity
-for_window [app_id="neovide"] opacity 0.8
+for_window [class="Code"] opacity $opacity
+for_window [class="foot"] opacity $opacity
+for_window [app_id="neovide"] opacity $opacity
+
+# SwayFX specific settings
+# https://github.com/WillPower3309/swayfx
+corner_radius 10
+shadows on
+for_window [window_role="browser"] dim_inactive 0
+for_window [window_role="vlc-main"] dim_inactive 0
+
+default_dim_inactive 0.2
+
+assign [app_id="Alacritty"] 1
+assign [class="^thunderbird$"] 7
+assign [class="^discord$"] 3
+assign [class="^Brave-browser$"] 2
+for_window [class="Spotify"] move to workspace 10 # does not work with class

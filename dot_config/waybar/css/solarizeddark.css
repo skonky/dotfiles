@@ -1,0 +1,297 @@
+* {
+  border: none;
+  font-family: JetBrains Mono,Ubuntu Nerd Font,Weather Icons,archcraft,sans-serif;
+  font-size: 19.5px;
+  font-weight: bold;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: transparent;
+  
+}
+
+window > box {
+  background: #002b36;
+  border-radius: 12px;
+  min-width: 46px;
+  margin: 8px;
+  background-clip: border-box;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25), 0 1px 3px 1px rgba(0, 0, 0, 0.25),
+    0 2px 6px 2px rgba(0, 0, 0, 0.25);
+}
+
+#taskbar {
+  background: #002b36;
+  padding: 0 0.6em;
+  margin-right: 10px;
+  margin-left: 4px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  color: #ebdbb2;
+}
+
+#taskbar button {
+  border-radius: 15px;
+  background: #004052;
+  color: #a89984;
+  margin-right: 6px;
+}
+
+#taskbar button.minimized {
+  border-radius: 15px;
+  background: #004052;
+  color: #a89984;
+}
+
+#taskbar button.active {
+  border-radius: 15px;
+  background: #4e635b;
+  color: #ebdbb2;
+}
+
+#disk,
+#custom-memory,
+#cpu,
+#custom-gputmp
+#custom-uptime,
+#temperature,
+#custom-weather,
+#cpu, #custom-gputmp {
+  background-color: #004052;
+  padding: 0 10px;
+  margin: 5px 0px;
+}
+#disk, #custom-memory {
+  background-color: #004052;
+  padding: 0 10px;
+  margin: 5px 0px;
+}
+
+#disk {
+  color: #89DDFF;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+#custom-memory {
+  color: #6c71c4;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+#cpu {
+  color: #b58900;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+#custom-gputmp {
+  color: #96CDFB;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+#custom-uptime, #temperature, #custom-weather {
+  background-color: #004052;
+  /*padding: 0 12px;*/
+  padding: 0px 10px;
+  margin: 5px 0px;
+  /*margin: 4px 4px 4px 4px;
+  border-radius: 90px;*/
+}
+
+#custom-uptime {
+  color: #859900;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+#temperature {
+  color: #6c71c4;
+  
+}
+
+#pulseaudio {
+  color: #b58900;
+  background-color: #004052;
+  padding: 0px 10px;
+  margin: 5px 5px 5px 2px;
+  border-radius: 15px;
+}
+
+#pulseaudio.muted {
+  background-color: #dc322f;
+}
+
+#custom-kernel {
+  color: #268bd2;
+  background-color: #004052;
+  padding: 0px 10px;
+  margin: 5px 5px 5px 6px;
+  border-radius: 15px;
+}
+
+#custom-weather {
+  color: #89DDFF;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+#temperature {
+  color: #6c71c4;
+}
+
+#temperature.critical {
+  background-color: #f07178;
+  color: #002b36;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+#workspaces{
+  background-color: #002b36;
+  border-radius: 15px;
+}
+
+#workspaces,
+#custom-media,
+#custom-fans,
+#clock,
+#network,
+#custom-power,
+#mpd,
+#custom-rofi,
+#custom-network,
+#window,
+#custom-window,
+#memory,
+#tray {
+  background-color: #004052;
+  padding: 0 12px;
+  margin: 5px 5px 5px 5px;
+  border-radius: 90px;
+  background-clip: padding-box;
+}
+
+#workspaces button {
+  padding: 0 4px;
+  min-width: 18px;
+  color: #268bd2;
+}
+
+#custom-network {
+  color: #f07178;
+  background-color: #002b36;
+
+}
+
+#custom-dunst {
+  color: #6c71c4;
+}
+
+#custom-dot{
+  color: #38384d;
+  font-size: 17px;
+  background-color: transparent;
+}
+
+#custom-dot2{
+  color: #38384d;
+  font-size: 17px;
+  background-color: transparent;
+}
+
+#custom-dot3{
+  color: #38384d;
+  font-size: 17px;
+  background-color: transparent;
+}
+
+#workspaces button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.active {
+  color: #6c71c4;
+  
+}
+
+#workspaces button.focused {
+  color: #6c71c4;
+}
+
+#workspaces button.urgent {
+  color: #f07178;
+}
+
+#memory {
+  color: #6c71c4;
+}
+
+#custom-media {
+  background-color: #6c71c4;
+  color: #002b36;
+}
+
+#custom-fans {
+  color: #f07178;
+}
+
+
+#clock {
+  color: #268bd2;
+}
+
+#mode {
+  color: #f07178
+}
+
+#window {
+  color: #859900;
+  /*color: #b0bec5;*/
+  background-color: transparent;
+}
+
+#custom-power {
+  color: #f25287;
+  background-color: #002b36;
+}
+
+#custom-rofi {
+	/*color: #6c71c4;
+  
+  background-color: #002b36;*/
+  font-size: 19px;
+  color: #C778DD;
+	background-color: #002b36;
+}
+
+@keyframes blink {
+    to {
+        background-color: #002b36;
+        color: #f07178;
+    }
+}
+
+#network {
+    color: #6c71c4
+}
+
+#network.disconnected {
+    background-color: #f07178;
+    color: #002b36;
+}
+
+

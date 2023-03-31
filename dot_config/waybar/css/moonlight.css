@@ -1,0 +1,266 @@
+* {
+  border: none;
+  font-family: JetBrains Mono,Ubuntu Nerd Font,Weather Icons,sans-serif;
+  font-size: 18.5px;
+  font-weight: bold;
+}
+
+window#waybar {
+  background-color: #1e2030;
+  transition-property: background-color;
+  transition-duration: .5s;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#workspaces,
+#tags,
+#mode,
+#custom-media,
+#custom-fans,
+#clock,
+#idle_inhibitor,
+#language,
+#pulseaudio,
+#backlight,
+#battery,
+#network,
+#custom-power,
+#mpd,
+#custom-rofi,
+#custom-dunst,
+#custom-network,
+#custom-kernel,
+#custom-uptime,
+#custom-memory,
+#custom-weather,
+#temperature,
+#window,
+#custom-window,
+#cpu,
+#memory,
+#disk,
+#tray {
+  background-color: #2b2f49;
+  padding: 0 12px;
+  margin: 4px 4px 4px 4px;
+  border-radius: 90px;
+  background-clip: padding-box;
+}
+
+#tags button {
+  padding: 0 5px;
+  min-width: 20px;
+  color: #82aaff;
+ 
+}
+
+#tags button:hover {
+  background-color: rgba(0, 0, 0, 0.2)
+}
+
+#tags button.focused {
+ color: #ae81ff;
+}
+
+#tags button.occupied {
+  color: #4fd6be;
+}
+
+
+#tags button.focused.occupied {
+  color: #ae81ff;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  min-width: 20px;
+  color: #82aaff;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  min-width: 20px;
+  color: #82aaff;
+}
+
+#custom-network {
+  color: #ff5370;
+  background-color: #1e2030
+}
+
+#custom-dunst {
+  color: #ae81ff;
+}
+
+#custom-dunst.enabled {
+  color: #ae81ff;
+}
+
+#custom-dunst.dnd {
+  background-color: #ae81ff;
+  color: #000000;
+}
+
+#workspaces button:hover {
+  background-color: rgba(0, 0, 0, 0.2)
+}
+
+#workspaces button.focused {
+  color: #ae81ff;
+}
+
+#workspaces button.active {
+  color: #ae81ff;
+}
+
+#workspaces button.urgent {
+  color: #ff5370;
+}
+
+#cpu {
+  color: #ffc777;
+}
+
+#disk {
+  color: #1e2030;
+  background: linear-gradient(90deg, rgba(174,129,255,1) 10%, rgba(130,170,255,1) 90%);
+}
+
+#custom-memory {
+  color: #1e2030;
+  background: linear-gradient(90deg, rgba(130,170,255,1) 10%, rgba(174,129,255,1) 100%);
+}
+
+#memory {
+  color: #ae81ff;
+}
+
+#temperature {
+  color: #1e2030;
+  background: linear-gradient(90deg, rgba(130,170,255,1) 15%, rgba(130,177,205,1) 100%);
+}
+
+#temperature.critical {
+  background-color: #ff5370;
+  color: #1e222a;
+}
+
+#custom-media {
+  background-color: #ae81ff;
+  color: #1e222a;
+}
+
+#custom-fans {
+  color: #ff5370;
+}
+
+
+#clock {
+  color: #1e2030;
+  background: linear-gradient(90deg, rgba(174,129,255,1) 5%,  rgba(130,170,255,1) 100%);
+}
+
+#custom-weather {
+  color: #4fd6be;
+ 
+}
+
+#mode {
+  color: #ff5370
+}
+
+#window {
+  color: #c3e88d;
+  background-color: #1e2030;
+}
+
+#custom-window {
+  color: #c3e88d;
+  background-color: #1e2030;
+}
+
+#custom-power {
+  color: #f25287
+}
+
+#idle_inhibitor {
+  color: #abb2bf;
+}
+
+#idle_inhibitor.activated {
+  background-color: #abb2bf;
+  color: #1e222a;
+}
+
+#language {
+  color: #4fd6be;
+}
+
+#custom-uptime {
+  color: #1e2030;
+  background: linear-gradient(90deg, rgba(174,129,255,1) 8%, rgba(130,170,255,1)  85%);
+}
+
+#pulseaudio {
+  color: #ffc777;
+}
+
+#custom-rofi {
+	color: #ae81ff;
+	background-color: #2b2f49;
+}
+
+#pulseaudio.muted {
+  background-color: #ff5370;
+  color: #1e222a;
+}
+
+#backlight {
+  color: #82aaff;
+}
+
+#custom-kernel {
+  color: #1e2030;
+  background: linear-gradient(90deg, rgba(130,170,255,1) 25%, rgba(174,129,255,1) 90%);
+}
+
+#battery {
+  color: #98c379;
+}
+
+#battery.charging, #battery.plugged {
+  background-color: #98c379;
+  color: #1e222a;
+}
+
+@keyframes blink {
+    to {
+        background-color: #1e222a;
+        color: #ff5370;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #ff5370;
+    color: #1e222a;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#network {
+    color: #ae81ff;
+    background-color: #1e2030
+}
+
+#network.disconnected {
+    background-color: #ff5370;
+    color: #1e222a;
+}
+
+

@@ -1,0 +1,6 @@
+set $laptop "eDP-1"
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+
+output HDMI-A-1 pos 0 0 res 1920x1080@75Hz
+output DP-1 pos 1920 0 res 1920x1080@75Hz

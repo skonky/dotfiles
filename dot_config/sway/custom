@@ -1,6 +1,10 @@
 # make screenshot
 bindsym Print exec grimshot save area
 bindsym Shift+Print exec grimshot save active
+bindsym $mod+Print exec grimshot copy area
+
+bindsym $mod+Shift+p exec grimshot copy area
+bindsym $mod+p exec grimshot save area
 
 # Resizing containers:
 #
@@ -17,15 +21,14 @@ mode "resize" {
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
-
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode "resize" 
 
-# 
-exec swayidle -w \
-     timeout 600 'swaylock -f -i ~/Pictures/Wallpapers/wallhaven/wallhaven-nk7qd1.png -s fill' \
-     timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-     before-sleep 'swaylock -f -i ~/Pictures/Wallpapers/wallhaven/wallhaven-nk7qd1.png -s fill'
+exec_always swayidle -w \
+     timeout $lock_short '$lock_cmd' \
+     timeout $lock_long 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+     before-sleep '$lock_cmd'
 
 exec wal -n
+

@@ -1,0 +1,263 @@
+{
+  "layer": "top",
+  //"mode": "dock",
+  //"exclusive": "false",
+  //"passthrough": "true",
+  "margin-top": 4,
+  "width": 3034,
+  "height": 30, 
+  "modules-left": ["custom/rofi","custom/dot","wlr/workspaces","custom/dot2","cpu","custom/gputmp","custom/dot4","disk","custom/memory","hyprland/window"],
+  "modules-center": ["clock",],
+  "modules-right": ["custom/network","custom/uptime","temperature","custom/weather","custom/kernel","pulseaudio","tray","custom/dot3","custom/power"],
+  "keyboard-state": {
+      "numlock": true,
+      "capslock": true,
+      "format": "{name} {icon}",
+      "format-icons": {
+      "locked": "",
+      "unlocked": ""
+   }
+  },
+  "wlr/workspaces": {
+    "sort-by-name": true,
+    "on-click": "activate",
+    //"format": "{icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "urgent": "",
+      "active": "",
+      "default": ""
+    }
+      // "on-click": "/usr/local/bin/hyprctl dispatch workspace 3"
+      // "sort-by-coordinates": true
+  },
+  "custom/workspaces": {
+    "format": "{}",
+    "exec": "$HOME/.config/hypr/bin/hyprworkspace",
+  },
+  "sway/window": {
+    "format": "{}",
+    "max-length": 45,
+    "rewrite": {
+      "(.*) - Mozilla Firefox": "🌎 $1",
+      "(.*) - zsh": "> [$1]"
+    },
+    "tooltip": false
+  },
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 60
+  },
+  "temperature": {
+    "hwmon-path": "/sys/module/k10temp/drivers/pci:k10temp/0000:00:18.3/hwmon/hwmon2/temp3_input",
+    "format": " {temperatureC}°C",
+    "interval": 2
+  },
+  "sway/language": {
+    "format": "{short}  "
+  },
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "tray": {
+    "spacing": 10
+  },
+  "clock": {
+    // "timezone": "America/New_York",
+    "format": " {:%b %d %H:%M} ",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": " {:%A, %B %d, %Y} "
+  },
+  "backlight": {
+    // "device": "acpi_video1",
+    "format": " {percent}%",
+  },
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": false,
+    "interval": 1
+  },
+  "memory": {
+    "format": "{used:0.1f}  ",
+    "interval": 2
+  },
+  "custom/memory": {
+    "format": "{} ",
+    "interval": 2,
+    "exec": "$HOME/.local/bin/mem3",
+  },
+  "disk": {
+    "interval": 30,
+    "format": "{percentage_used}% ",
+    "path": "/"
+  },
+  "mpd": {
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "unknown-tag": "N/A",
+    "interval": 2,
+    "consume-icons": {
+      "on": " "
+    },
+    "random-icons": {
+      "off": "<span color=\"#f53c3c\"></span> ",
+      "on": " "
+    },
+    "repeat-icons": {
+      "on": " "
+    },
+    "single-icons": {
+      "on": "1 "
+    },
+    "state-icons": {
+      "paused": "",
+       "playing": ""
+      },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)"
+  },
+  "battery": {
+    "states": {
+      // "good": 95,
+      // "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    //"format-alt": "{time} {icon}",
+    "tooltip": false,
+    // "format-good": "", // An empty format will hide the module
+    "format-full": "{icon} Full",
+    "format-icons": ["","","","",""]
+  },
+  "network": {
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-wifi": "",
+    "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "睊 Not connected",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "tooltip-format": "{essid} {signalStrength}%"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}% {format_source}",
+    "format-bluetooth-muted": "  {volume}% {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "tooltip-format": "{desc}, {volume}%",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-click-middle": "pavucontrol"
+  },
+  "custom/power": {
+    "format": "",
+    "on-click": "powermenu",
+    "on-click-right": "killall -9 wofi",
+    "tooltip": false
+  },
+  "custom/rofi": {
+    "format": "",
+    //"format": "異",
+    "on-click": "menu",
+    "on-click-right": "killall -9 wofi",
+    "tooltip": false
+  },
+  "custom/dunst": {
+    "exec": "~/.config/waybar/scripts/dunst.sh",
+    "on-click": "dunstctl set-paused toggle",
+    "restart-interval": 1,
+    "format": "{}",
+    "return-type": "json",
+  },
+  "custom/dot4": {
+    "format": " "
+  },
+  "custom/dot": {
+    "format": ""
+  },
+  "custom/dot2": {
+    "format": " "
+  },
+  "custom/dot3": {
+    "format": " "
+  },
+  "custom/network": {
+    "format": "{}",
+    "exec": "$HOME/.local/bin/network-traffic.sh",
+  },
+  "custom/gputmp": {
+    "format": "{}",
+    "exec": "$HOME/.local/bin/gputmp",
+    "interval": 2,
+  },
+  "custom/uptime": {
+    "format": " {}",
+    "interval": 30,
+    "exec": "$HOME/.local/bin/upt2",
+  },
+  "custom/kernel": {
+    "format": " {}",
+    "interval": 7200,
+    "exec": "uname -r",
+  },
+  "custom/weather": {
+    "format": "<span font_family='Weather Icons'>{icon}</span> {}",
+    "format-icons": {
+      "01d": "",
+      "01n": "",
+      "02d": "",
+      "02n": "",
+      "03d": "",
+      "03n": "",
+      "04d": "",
+      "04n": "",
+      "09d": "",
+      "09n": "",
+      "10d": "",
+      "10n": "",
+      "11d": "",
+      "11n": "",
+      "13d": "",
+      "13n": "",
+      "50d": "",
+      "50n": ""
+    },
+    "tooltip": false,
+    "interval": 3600,
+    "exec": "python ~/.config/hypr/waybar/modules/openWeatherMap.py",
+    "return-type": "json",
+    "escape": true
+  },
+  "river/tags": {
+    "num-tags":9,
+  }
+}

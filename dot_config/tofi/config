@@ -1,16 +1,26 @@
-anchor = middle
-width = 50%
-height = 345
+anchor = center
+width = 20%
+height = 30%
 horizontal = false
-font-size = 12
-prompt-text = "  : "
-font = "Fira Code"
+
+font-size = 15
+font = "JetBrainsMono Nerd Font Bold"
+
+
+background-color= #24283b
+
+selection-color = #c4a7e7
+selection-padding = 10
+
 outline-width = 0
-border-width = 5
-min-input-width = 240
-result-spacing = 10
-padding-top = 10
-padding-bottom = 10
-padding-left = 10
-padding-right = 10
+border-width = 3
+border-color = #c4a7e7
+padding-left = 15
+
+result-spacing = 1
+corner-radius = 10
+
+hide-input = false
+min-input-width = 0
+prompt-text = " :"
 fuzzy-match = true

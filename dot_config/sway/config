@@ -1,5 +1,6 @@
 ### Global Variables
 
+# system
     set $mod Mod4
     set $left h
     set $down j
@@ -9,13 +10,18 @@
 # applications
     set $term alacritty
     set $browser brave
-    set $lock_bg ~/Pictures/Wallpapers/wallhaven/wallhaven-nk7qd1.png
+
+# lock and idle 
+    # 5 minutes
+    set $lock_short 300
+    # 20 minutes 
+    set $lock_long 1200
+    # lock scripts
+    set $lock_cmd ~/scripts/lock.sh 
 
 # app launcher menu
-# set $menu bemenu-run 
-    set $menu tofi-run -c ~/.config/tofi/config | xargs swaymsg exec --
-    # set $menu rofi -show run
-
+    set $menu tofi-drun -c ~/.config/tofi/config | xargs swaymsg exec --
+    # set $menu wofi --show drun -i | xargs swaymsg exec --
 
 ### Key bindings
     include ./bindings
@@ -25,5 +31,7 @@
     include ./layout
 ### Input settings keyboard etc.
     include ./input
+### Output settings for monitors etc.
+    include ./output
 
     include /etc/sway/config.d/*

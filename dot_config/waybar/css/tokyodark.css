@@ -1,14 +1,14 @@
 * {
   border: none;
-  font-family: JetBrainsMono Nerd Font, Ubuntu Nerd Font, Weather Icons,
-    sans-serif;
-  font-size: 16px;
+  font-family: JetBrains Mono,Ubuntu Nerd Font,Weather Icons,archcraft,sans-serif;
+  font-size: 19.5px;
   font-weight: bold;
   min-height: 0;
 }
 
 window#waybar {
   background-color: transparent;
+  
 }
 
 window > box {
@@ -54,75 +54,73 @@ window > box {
 #disk,
 #custom-memory,
 #cpu,
-#custom-gputmp #custom-uptime,
+#custom-gputmp
+#custom-uptime,
 #temperature,
 #custom-weather,
-#cpu,
-#custom-gputmp,
-#bluetooth {
+#cpu, #custom-gputmp {
   background-color: #24283b;
   padding: 0 10px;
   margin: 5px 0px;
 }
-#disk,
-#custom-memory {
+#disk, #custom-memory {
   background-color: #24283b;
   padding: 0 10px;
   margin: 5px 0px;
 }
 
 #disk {
-  color: #89ddff;
+  color: #89DDFF;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  border-radius: 10px;
 }
 
 #custom-memory {
-  color: #c792ea;
+  color: #C792EA;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
 #cpu {
-  color: #ffcb6b;
+  color: #FFCB6B;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  border-radius: 10px;
 }
 
 #custom-gputmp {
-  color: #96cdfb;
+  color: #96CDFB;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
-#custom-uptime,
-#temperature,
-#custom-weather {
+#custom-uptime, #temperature, #custom-weather {
   background-color: #24283b;
+  /*padding: 0 10px;*/
   padding: 0px 10px;
   margin: 5px 0px;
+  /*margin: 4px 4px 4px 4px;
+  border-radius: 90px;*/
 }
 
 #custom-uptime {
-  color: #c3e88d;
+  color: #C3E88D;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
 
 #temperature {
-  color: #c792ea;
+  color: #C792EA;
+  
 }
 
 #custom-weather {
-  color: #89ddff;
+  color: #89DDFF;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
 #temperature {
-  color: #c792ea;
+  color: #C792EA;
 }
 
 #temperature.critical {
@@ -131,18 +129,18 @@ window > box {
 }
 
 @keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
-#workspaces {
+#workspaces{
   background-color: #1a1b26;
   border-radius: 10px;
 }
@@ -161,8 +159,7 @@ window > box {
 #window,
 #custom-window,
 #memory,
-#tray,
-#bluetooth {
+#tray {
   background-color: #24283b;
   padding: 0 10px;
   margin: 5px 5px 5px 5px;
@@ -173,48 +170,48 @@ window > box {
 #workspaces button {
   padding: 0 4px;
   min-width: 18px;
-  color: #82aaff;
+  color: #82AAFF;
 }
-#bluetooth {
-  color: #82aaff;
-}
+
 #custom-network {
   color: #f07178;
   background-color: #1a1b26;
+
 }
 
 #custom-dunst {
-  color: #c792ea;
+  color: #C792EA;
 }
 
-#custom-dot {
+#custom-dot{
   color: #38384d;
   font-size: 17px;
   background-color: transparent;
 }
 
-#custom-dot2 {
+#custom-dot2{
   color: #38384d;
   font-size: 17px;
   background-color: transparent;
 }
 
-#custom-dot3 {
+#custom-dot3{
   color: #38384d;
   font-size: 17px;
   background-color: transparent;
 }
 
 #workspaces button:hover {
-  background: alpha(#000, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 #workspaces button.active {
-  color: #c792ea;
+  color: #C792EA;
+  
 }
 
 #workspaces button.focused {
-  color: #c792ea;
+  color: #C792EA;
 }
 
 #workspaces button.urgent {
@@ -222,11 +219,11 @@ window > box {
 }
 
 #memory {
-  color: #c792ea;
+  color: #C792EA;
 }
 
 #custom-media {
-  background-color: #c792ea;
+  background-color: #C792EA;
   color: #1a1b26;
 }
 
@@ -234,16 +231,17 @@ window > box {
   color: #f07178;
 }
 
+
 #clock {
-  color: #c3e88d;
+  color: #82AAFF;
 }
 
 #mode {
-  color: #ffcb6b;
+  color: #FFCB6B;
 }
 
 #window {
-  color: #c3e88d;
+  color: #C3E88D;
   background-color: transparent;
 }
 
@@ -253,16 +251,16 @@ window > box {
 }
 
 #pulseaudio {
-  color: #ffcb6b;
+  color: #FFCB6B;
 }
 
 #custom-rofi {
-  /*color: #C792EA;
+	/*color: #C792EA;
   
   background-color: #1a1b26;*/
   font-size: 19px;
-  color: #c778dd;
-  background-color: #1a1b26;
+  color: #C778DD;
+	background-color: #1a1b26;
 }
 
 #pulseaudio.muted {
@@ -271,25 +269,23 @@ window > box {
 }
 
 #custom-kernel {
-  color: #89ddff;
+  color: #82AAFF
 }
 
 @keyframes blink {
-  to {
-    background-color: #1a1b26;
-    color: #f07178;
-  }
+    to {
+        background-color: #1a1b26;
+        color: #f07178;
+    }
 }
 
 #network {
-  color: #c792ea;
+    color: #C792EA
 }
 
 #network.disconnected {
-  background-color: #f07178;
-  color: #1a1b26;
+    background-color: #f07178;
+    color: #1a1b26;
 }
 
-tooltip {
-  background-color: #24283b;
-}
+
