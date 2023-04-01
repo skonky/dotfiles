@@ -1,0 +1,47 @@
+# tmux
+alias t='tmux'
+alias tls='tmux ls' # list sessions
+alias tat='tmux a -t' # attach session
+
+#git
+alias gs='git status'
+alias gsta='git stash'
+alias gch='git checkout'
+alias gcm='git commit -m'
+alias gipu='git pull'
+alias ga='git add'
+alias gfa='git fetch --all'
+alias gfo='git fetch origin'
+alias gdiff='git diff'
+alias grom='git rebase origin/master'
+alias glog='git log --oneline --decorate --graph --all'
+
+#node
+alias nrd='npm run dev'
+alias npi='npm install'
+alias nrt='npm run test'
+alias nrb='npm run build'
+alias yrd='yarn dev'
+alias ybs='yarn build && yarn start'
+alias yb='yarn build'
+alias ys='yarn start'
+alias yt='yarn test'
+alias ya='yarn add'
+alias yi='yarn install'
+alias y='yarn'
+
+# devops
+alias dprune='docker system prune -a'
+alias dk='docker'
+alias dcu='docker-compose up'
+alias dcb='docker-compose build'
+alias mk='minikube'
+alias k='kubectl'
+
+# misc
+alias c='clear'
+alias bitcoin='sh ~/scripts/bitcoin.sh'
+alias copy='~/scripts/copy.sh'
+alias vim='nvim'
+alias v='nvim'
+
