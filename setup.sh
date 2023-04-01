@@ -2,8 +2,7 @@
 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
 ## > Install packages with yay
-# LOOK AT ALL THIS BLOAT LOL
-yay -S sway waybar kubectl swaybg swaylock swayidle neovim polkit neofetch wlroots wayland-protocols pcre2 json-c pango cairo wdisplays xorg-xwayland dmenu tmux alacritty zsh curl wget rofi tofi gitui wdisplays neovide grimshot ly wdisplays bluez bluez-utils meson scdoc wayland-protocols mpv feh dunst xclip bashtop ripgrep bat lsd pcmanfm unzip zip openconnect git diff-so-fancy nitch nerd-fonts-agave ttf-font-awesome-5
+yay -S sway waybar kubectl brave swaybg swaylock-effects swayidle neovim polkit neofetch wlroots wayland-protocols pcre2 json-c pango cairo wdisplays xorg-xwayland dmenu tmux alacritty zsh curl wget docker tofi wdisplays grimshot bluez bluez-utils meson scdoc wayland-protocols mpv feh dunst xclip bashtop ripgrep bat lsd pcmanfm unzip zip openconnect git diff-so-fancy nitch nerd-fonts-agave ttf-font-awesome-5 dunstify
 
 ####################
 ## > Change default shell and install ohmyzsh
@@ -32,10 +31,9 @@ corepack prepare yarn@stable --activate
 ## > Install ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# Install plugins and p10k
+# Install plugins
 git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ####################
 
 ####################
@@ -45,18 +43,8 @@ sudo mv z.sh /opt
 ####################
 
 ####################
-## > Install NvChad
-rm -rf ~/.config/nvim
-rm -rf ~/.local/share/nvim
-rm -rf ~/.cache/nvim
-
-mkdir -p ~/.config/nvim
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-####################
-
-####################
 ## > configs
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply frank-selhorst
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply skonky
 
 ####################
 ## > autostart sway in zsh session
