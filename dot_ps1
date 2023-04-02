@@ -1,0 +1,12 @@
+#!/bin/zsh
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats ' %b %c'
+
+setopt PROMPT_SUBST
+
+PROMPT='${PWD/#$HOME/~} ${vcs_info_msg_0_}
+%F{cyan}%b⟩%F{yellow}⟩%F{magenta}⟩ %F{250}'
+
