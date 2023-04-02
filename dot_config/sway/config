@@ -17,26 +17,25 @@
     # 20 minutes 
     set $lock_long 1200
     # lock scripts
-    set $lock_cmd ~/scripts/lock.sh 
+    set $lock_cmd $HOME/scripts/lock.sh
+    # exec swayidle
+    exec_always swayidle -w \
+        timeout $lock_short '$lock_cmd' \
+        timeout $lock_long 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+        before-sleep '$lock_cmd'
 
 # app launcher menu
-    set $menu tofi-drun -c ~/.config/tofi/config | xargs swaymsg exec --
+    set $menu tofi-drun -c $HOME/.config/tofi/config | xargs swaymsg exec -
 
 ### Key bindings
     include ./bindings
-### Custom tools
-    include ./custom
 ### Layout settings
     include ./layout
 ### Input settings keyboard etc.
     include ./input
 ### Output settings for monitors etc.
     include ./output
-
+### User configuration https://wiki.archlinux.org/title/sway#Configuration
     include /etc/sway/config.d/*
 
-### Lock and idle
-    exec_always swayidle -w \
-        timeout $lock_short '$lock_cmd' \
-        timeout $lock_long 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-        before-sleep '$lock_cmd'
+

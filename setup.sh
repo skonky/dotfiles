@@ -51,7 +51,7 @@ function install() {
 
     #####################
     ### > autostart sway in zsh session
-    echo "sway" >>~/.zprofile
+    echo "sway" >>$HOME/.zprofile
     #####################
 
     echo "All done!"

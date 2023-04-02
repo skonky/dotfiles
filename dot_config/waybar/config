@@ -46,7 +46,7 @@
   },
   "network": {
     "format-wifi": " {essid}",
-    "format-ethernet": "{ipaddr}/{cidr} ",
+    "format-ethernet": "﴿ {ipaddr}",
     "tooltip": false,
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
@@ -171,8 +171,8 @@
     "on-click-middle": "pavucontrol"
   },
   "custom/rofi": {
-    "format": "",
-    "on-click": "tofi-drun -c ~/.config/tofi/config | xargs swaymsg exec --",
+    "format": "",
+    "on-click": "tofi-drun -c $HOME/.config/tofi/config | xargs swaymsg exec --",
     "on-click-right": "pkill tofi",
     "tooltip": false
   },
@@ -189,7 +189,7 @@
     "format": " "
   },
   "custom/kernel": {
-    "format": "ﬄ {}",
+    "format": " {}",
     "interval": 7200,
     "exec": "uname -r",
     "on-click": "alacritty --hold -e paru"
