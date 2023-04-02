@@ -40,8 +40,8 @@ alias k='kubectl'
 
 # misc
 alias c='clear'
-alias bitcoin='sh ~/scripts/bitcoin.sh'
-alias copy='~/scripts/copy.sh'
 alias vim='nvim'
 alias v='nvim'
-
+alias calc='bc -ql' # calculator with support for variables and functions
+alias copy="xclip -sel c < "
+alias ls='lsd'

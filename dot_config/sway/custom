@@ -1,13 +1,11 @@
-# make screenshot
+# screenshot
 bindsym Print exec grimshot save area
 bindsym Shift+Print exec grimshot save active
 bindsym $mod+Print exec grimshot copy area
-
 bindsym $mod+Shift+p exec grimshot copy area
 bindsym $mod+p exec grimshot save area
 
-# Resizing containers:
-#
+# resizing containers:
 mode "resize" {
     bindsym $left resize shrink width 14px
     bindsym $down resize grow height 14px
@@ -25,10 +23,4 @@ mode "resize" {
 
 bindsym $mod+r mode "resize" 
 
-exec_always swayidle -w \
-     timeout $lock_short '$lock_cmd' \
-     timeout $lock_long 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-     before-sleep '$lock_cmd'
-
-exec wal -n
 

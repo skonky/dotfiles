@@ -21,7 +21,6 @@
 
 # app launcher menu
     set $menu tofi-drun -c ~/.config/tofi/config | xargs swaymsg exec --
-    # set $menu wofi --show drun -i | xargs swaymsg exec --
 
 ### Key bindings
     include ./bindings
@@ -35,3 +34,9 @@
     include ./output
 
     include /etc/sway/config.d/*
+
+### Lock and idle
+    exec_always swayidle -w \
+        timeout $lock_short '$lock_cmd' \
+        timeout $lock_long 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+        before-sleep '$lock_cmd'
