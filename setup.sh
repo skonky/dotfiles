@@ -1,62 +1,60 @@
-## > Install and make yay
-sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+echo "*******CAUTION: there is no uninstaller ;)*********"
+echo "*******CAUTION: Are you sure you want to proceed? *********"
 
-## > Install packages with yay
-yay -S sway waybar kubectl brave swaybg swaylock-effects swayidle neovim polkit neofetch wlroots wayland-protocols pcre2 json-c pango cairo wdisplays xorg-xwayland dmenu tmux alacritty zsh curl wget docker tofi wdisplays grimshot bluez bluez-utils meson scdoc wayland-protocols mpv feh dunst xclip bashtop ripgrep bat lsd pcmanfm unzip zip openconnect git diff-so-fancy nitch nerd-fonts-agave ttf-font-awesome-5 dunstify
+read -p "Enter: y(es) to proceed. (CTRL-D to exit)" choice
 
-####################
-## > Change default shell and install ohmyzsh
-chsh -s $(which zsh) && zsh
-####################
-## > node management
-# make cache folder (if missing) and take ownership
-sudo mkdir -p /usr/local/n
-sudo chown -R $(whoami) /usr/local/n
-# make sure the required folders exist (safe to execute even if they already exist)
-sudo mkdir -p /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
-# take ownership of Node.js install destination folders
-sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
-# download the n binary from git
-curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o n
-# install the lts
-bash n lts
-rm n
-# now node and npm are available
-npm install -g n
-# install yarn through corepack
-corepack prepare yarn@stable --activate
-####################
+if [ "${choice,,}"  = 'y' ] || [ "${choice,,}"  = 'yes' ]; then
+    install
+  else
+     echo "Exiting..."
+  fi
 
-####################
-## > Install ohmyzsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+function install() {
+    ### > Install and make yay
+    sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
-# Install plugins
-git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-####################
+    ## > Install packages with yay
+    yay -S sway waybar kubectl brave swaybg swaylock-effects swayidle neovim polkit neofetch wlroots wayland-protocols pcre2 json-c pango cairo wdisplays xorg-xwayland dmenu tmux alacritty zsh curl wget tofi wdisplays grimshot bluez bluez-utils meson scdoc wayland-protocols mpv feh dunst xclip bashtop ripgrep bat lsd pcmanfm unzip zip openconnect git diff-so-fancy nitch ttf-font-awesome-5 dunstify ttf-jetbrains-mono-nerd
 
-####################
-## > Set up rupa/z jump around
-wget https://raw.githubusercontent.com/rupa/z/master/z.sh
-sudo mv z.sh /opt
-####################
+    #####################
+    ### > Change default shell 
+    chsh -s $(which zsh) && zsh
+    #####################
+    ### > Node.js management
+    ## make cache folder (if missing) and take ownership
+    sudo mkdir -p /usr/local/n
+    sudo chown -R $(whoami) /usr/local/n
+    ## make sure the required folders exist (safe to execute even if they already exist)
+    sudo mkdir -p /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
+    ## take ownership of Node.js install destination folders
+    sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
+    ## download the n binary from git
+    curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o n
+    ## install the lts
+    bash n lts
+    rm n
+    ## now node and npm are available
+    npm install -g n
+    ## install yarn through corepack
+    corepack prepare yarn@stable --activate
+    #####################
 
-####################
-## > configs
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply skonky
+    #####################
+    ### > Set up rupa/z jump around
+    wget https://raw.githubusercontent.com/rupa/z/master/z.sh
+    sudo mv z.sh /opt
+    #####################
 
-####################
-## > autostart sway in zsh session
-echo "sway" >>~/.zprofile
-####################
+    #####################
+    ### > dot_config
+    sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply skonky
 
-echo "SETUP FINISHED!"
-echo "----------------------------------------------------------------"
-echo "1. Install lsp servers for neovim"
-echo "2. fix the wallpaper"
-echo ""
-echo "Used fonts: FontAwesome5(free), Agave Nerd Font"
-echo "https://www.nerdfonts.com/"
-echo "https://aur.archlinux.org/packages?K=nerd-fonts-&outdated=off"
-echo "Wallpapers are from: https://wallhaven.cc"
+    #####################
+    ### > autostart sway in zsh session
+    echo "sway" >>~/.zprofile
+    #####################
+
+    echo "All done!"
+    echo "https://aur.archlinux.org/packages?K=nerd-fonts-&outdated=off"
+    echo "https://wallhaven.cc"
+}
