@@ -1,0 +1,3 @@
+return {
+    { "gE", ":TroubleToggle<cr>" },
+}
