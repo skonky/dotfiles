@@ -62,9 +62,8 @@ local plugins = {
 		"jose-elias-alvarez/null-ls.nvim",
 		lazy = false,
 		config = function()
-			local null_ls = require("null-ls")
 			local opts = require("plugins.null_ls.config")
-			null_ls.setup(opts)
+			require("null-ls").setup(opts)
 		end,
 	},
 	{
