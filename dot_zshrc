@@ -24,7 +24,6 @@ source ~/.google-cloud # google cloud work stuff
 
 # source plugins
 source ~/.zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source ~/.zsh-plugins/fzf-tab-completion/zsh/fzf-zsh-completion.sh
 source ~/.zsh-plugins/zsh-fzf-history-search/zsh-fzf-history-search.zsh
 
 # pnpm
