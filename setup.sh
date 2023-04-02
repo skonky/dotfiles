@@ -1,6 +1,6 @@
 echo "*******CAUTION: there is no uninstaller ;)*********"
 echo "*******CAUTION: Are you sure you want to proceed? *********"
-
+# read input 
 read -p "Enter: y(es) to proceed. (CTRL-D to exit)" choice
 
 if [ "${choice,,}"  = 'y' ] || [ "${choice,,}"  = 'yes' ]; then
@@ -14,7 +14,7 @@ function install() {
     sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
     ## > Install packages with yay
-    yay -S sway waybar kubectl brave swaybg swaylock-effects swayidle neovim polkit neofetch wlroots wayland-protocols pcre2 json-c pango cairo wdisplays xorg-xwayland dmenu tmux alacritty zsh curl wget tofi wdisplays grimshot bluez bluez-utils meson scdoc wayland-protocols mpv feh dunst xclip bashtop ripgrep bat lsd pcmanfm unzip zip openconnect git diff-so-fancy nitch ttf-font-awesome-5 dunstify ttf-jetbrains-mono-nerd
+    yay -S sway waybar brave swaybg swaylock-effects swayidle neovim polkit neofetch nerdfetch wlroots wayland-protocols pcre2 json-c pango cairo wdisplays xorg-xwayland dmenu tmux alacritty zsh curl wget tofi wdisplays grimshot bluez bluez-utils meson scdoc wayland-protocols mpv feh dunst xclip bashtop ripgrep bat lsd pcmanfm unzip zip openconnect git diff-so-fancy nitch ttf-font-awesome-5 dunstify ttf-jetbrains-mono-nerd
 
     #####################
     ### > Change default shell 
